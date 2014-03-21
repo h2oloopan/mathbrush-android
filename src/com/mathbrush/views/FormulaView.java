@@ -2,6 +2,7 @@ package com.mathbrush.views;
 
 import android.content.Context;
 import android.view.View;
+<<<<<<< HEAD
 import android.util.AttributeSet;
 import android.graphics.*;
 

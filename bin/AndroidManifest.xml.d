@@ -1,2 +1,2 @@
-/Users/shengyingpan/Projects/backup_mathbrush-android/bin/AndroidManifest.xml : \
-/Users/shengyingpan/Projects/backup_mathbrush-android/AndroidManifest.xml \
+/Users/shengyingpan/Projects/mathbrush-android/bin/AndroidManifest.xml : \
+/Users/shengyingpan/Projects/mathbrush-android/AndroidManifest.xml \

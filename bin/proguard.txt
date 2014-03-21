@@ -1,6 +1,9 @@
 # view AndroidManifest.xml #generated:16
 -keep class com.mathbrush.MathBrush { <init>(...); }
 
-# view res/layout/main.xml #generated:8
+# view res/layout/main.xml #generated:7
 -keep class com.mathbrush.views.CanvasView { <init>(...); }
+
+# view res/layout/main.xml #generated:14
+-keep class com.mathbrush.views.FormulaView { <init>(...); }
 

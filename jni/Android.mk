@@ -31,7 +31,7 @@ LOCAL_MODULE := wrappers
 LOCAL_STATIC_LIBRARIES:= mathreco
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/mathreco/include
 LOCAL_SRC_FILES := recognition-wrapper.cpp
-LOCAL_LDLIBS := -lstdc++
+LOCAL_LDLIBS := -lstdc++ -llog
 include $(BUILD_SHARED_LIBRARY)
 #LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/mathreco/include
 #include $(BUILD_STATIC_LIBRARY)

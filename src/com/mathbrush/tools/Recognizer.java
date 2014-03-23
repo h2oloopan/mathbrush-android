@@ -1,17 +1,17 @@
 package com.mathbrush.tools;
 
-import com.mathbrush.wrappers.RecognitionWrapper;
+
+import com.mathbrush.tools.Debugger;
 
 public class Recognizer {
 	
-	private RecognitionWrapper wrapper;
-	
 	public Recognizer() {
-		this.wrapper = new RecognitionWrapper();
+		System.loadLibrary("wrappers");	
 	}
 	
-	public void recognize() {
-		//Test the wrapper here for now!
-		wrapper.initRecognizer("", "", "");
+	public boolean init(String trainingPath, String profilePath, String profileName) {
+		return initRecognizer(trainingPath, profilePath, profileName);
 	}
+
+	private native boolean initRecognizer(String trainingPath, String profilePath, String profileName);
 }

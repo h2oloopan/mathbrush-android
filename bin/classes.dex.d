@@ -10,8 +10,10 @@
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/R$string.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/R$style.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/R.class \
+/Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/tools/Debugger.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/tools/Recognizer.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/views/CanvasView.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/views/FormulaView.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/wrappers/RecognitionWrapper.class \
+/Users/shengyingpan/Projects/mathbrush-android/bin/classes/R.java.d \
 /Users/shengyingpan/Projects/mathbrush-android/bin/dexedLibs/android-support-v4-a59bc46e1c7919393c465a3a828f3d27.jar \

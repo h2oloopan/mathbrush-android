@@ -17,6 +17,8 @@
 #include <cassert>
 #include <cstring>
 
+#include "wrapper.h"
+
 
 namespace scg
 {
@@ -525,6 +527,7 @@ parse_nonterminal(std::istream &is, grammar &G, nonterminal *nt, std::map<std::s
 				s = ss.str();
 				n = s.length();
 
+
 				P->tbuild = parse_tree_builder(G, s.substr(1, n - 2), nt, P);
 			}
 			else if (s[0] == '`') {
@@ -814,6 +817,7 @@ read_grammar(std::istream &is, grammar &G) {
 		if (is.eof()) {
 			break;
 		}
+
 
 		while (label[0] == '#') {
 			char buf[256];

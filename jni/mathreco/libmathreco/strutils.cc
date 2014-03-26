@@ -1,21 +1,39 @@
 #include "strutils.h"
 #include <cstdlib>
 #include <iostream>
+#include "wrapper.h"
 
 namespace scg {
 
 std::wstring
 str2wstr(const std::string &s) {
+#ifdef __ANDROID__
+	std::wstring wstr = android::str2wstr(s);
+	return wstr;
+#else
+	
 	size_t mbsz = mbstowcs(0, s.c_str(), 0);
 	std::wstring ws;
 	//ws.resize(mbsz);
+
 	wchar_t *wcs = new wchar_t[mbsz+1];
+
+	//It's crashing here!
+	
 	if (mbstowcs(wcs, s.c_str(), mbsz+1) != mbsz || wcs[mbsz] != 0) {
+		LOG("Going to abort %s", wcs);
 		abort();
 	}
+
+
 	ws = wcs;
 	delete[] wcs;
 	return ws;
+
+#endif
+
+	
+	
 }
 
 std::string

@@ -1,4 +1,4 @@
-# view AndroidManifest.xml #generated:17
+# view AndroidManifest.xml #generated:19
 -keep class com.mathbrush.MathBrush { <init>(...); }
 
 # view res/layout/main.xml #generated:7

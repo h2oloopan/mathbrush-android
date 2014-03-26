@@ -26,6 +26,8 @@
 #include <cassert>
 #include <locale.h>
 
+#include "wrapper.h"
+
 namespace scg
 {
 
@@ -1269,25 +1271,48 @@ InitializeRecognizer() {
 	}
 	counter_wrapper refcount(&initialization_counter);
 
+
+
 	int e;
 	initialize_grammar_typemap();
+
+	
+
 	if (FAILURE(e = RestoreRegisteredParms())) return e;
+
+	
+
 	if (FAILURE(e = initialize_relations())) return e;
 	//if (FAILURE(e = rebuild_global_symbols_db())) throw e;
+
+	
+
 	if (FAILURE(e = symdb_init())) return e;
+
+	
+
 	if (FAILURE(e = recognizer_initialize())) return e;
+
+	
+
 	std::string path;
 	if (FAILURE(e = GetProfilePath(path))) return e;
+
+
+
 	std::string gfile;
 	if (grammar_name.empty()) {
 		grammar_name = DEFAULT_GRAMMAR;
 	}
 	gfile = path + "/" + grammar_name + ".grammar";
+
+
 	std::ifstream ifs(gfile.c_str());
 	if (ifs.fail() || ifs.bad() || !ifs.is_open()) {
 		return E_NOTFOUND;
 	}
 	
+
 	//ptab_staticinit();
 
 	global_grammar = new grammar;
@@ -1300,6 +1325,8 @@ InitializeRecognizer() {
 	catch (int e) {
 		return e;
 	}
+
+	
 
 	/*ptab_rectify(global_grammar);
 
@@ -1314,6 +1341,8 @@ InitializeRecognizer() {
 	}*/
 
 	if (FAILURE(e = InitializeMatrixRecognizer(global_grammar))) return e;
+
+
 	if (FAILURE(e = initcanonicalsids(global_grammar))) return e;
 
 	/*
@@ -1331,6 +1360,7 @@ InitializeRecognizer() {
 		symdb_removesym(*i, false);
 	}*/
 	refcount.release(); // don't decrement the ref count now, we're all initialized
+
 	return 0;
 }
 

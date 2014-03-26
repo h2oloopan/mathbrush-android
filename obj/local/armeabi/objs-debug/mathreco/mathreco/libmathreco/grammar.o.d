@@ -69,7 +69,9 @@ obj/local/armeabi/objs-debug/mathreco/mathreco/libmathreco/grammar.o: \
  /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/queue \
  jni/mathreco/include/strutils.h \
  /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
- /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring
+ /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring \
+ jni/wrapper.h \
+ /Users/shengyingpan/Dev/adt/ndk/platforms/android-19/arch-arm/usr/include/android/log.h
 
 jni/mathreco/include/grammar.h:
 
@@ -236,3 +238,7 @@ jni/mathreco/include/strutils.h:
 /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream:
 
 /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/cstring:
+
+jni/wrapper.h:
+
+/Users/shengyingpan/Dev/adt/ndk/platforms/android-19/arch-arm/usr/include/android/log.h:

@@ -8,5 +8,5 @@ public class RecognitionWrapper {
 		System.loadLibrary("wrappers");
 	}
 	
-	public native boolean initRecognizer(String trainingPath, String profilePath, String profileName);
+	public native boolean initRecognizer(String trainingPath, String profilePath, String profileName, String verboseFile);
 }

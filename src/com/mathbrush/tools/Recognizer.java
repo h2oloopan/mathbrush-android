@@ -9,9 +9,9 @@ public class Recognizer {
 		System.loadLibrary("wrappers");	
 	}
 	
-	public boolean init(String trainingPath, String profilePath, String profileName) {
-		return initRecognizer(trainingPath, profilePath, profileName);
+	public boolean init(String trainingPath, String profilePath, String profileName, String verboseFile) {
+		return initRecognizer(trainingPath, profilePath, profileName, verboseFile);
 	}
 
-	private native boolean initRecognizer(String trainingPath, String profilePath, String profileName);
+	private native boolean initRecognizer(String trainingPath, String profilePath, String profileName, String verboseFile);
 }

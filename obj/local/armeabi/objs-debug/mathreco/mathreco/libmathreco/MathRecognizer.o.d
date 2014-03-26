@@ -74,7 +74,9 @@ obj/local/armeabi/objs-debug/mathreco/mathreco/libmathreco/MathRecognizer.o: \
  jni/mathreco/include/extern-iter.h jni/mathreco/include/reco-types.h \
  jni/mathreco/include/stream-defs.h jni/mathreco/include/strutils.h \
  jni/mathreco/include/replacements.h \
- /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream
+ /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
+ jni/wrapper.h \
+ /Users/shengyingpan/Dev/adt/ndk/platforms/android-19/arch-arm/usr/include/android/log.h
 
 jni/mathreco/include/MathRecognizer.h:
 
@@ -265,3 +267,7 @@ jni/mathreco/include/strutils.h:
 jni/mathreco/include/replacements.h:
 
 /Users/shengyingpan/Dev/adt/ndk/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream:
+
+jni/wrapper.h:
+
+/Users/shengyingpan/Dev/adt/ndk/platforms/android-19/arch-arm/usr/include/android/log.h:

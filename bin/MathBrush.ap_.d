@@ -27,7 +27,6 @@
 /Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush \
 /Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/base.symbols \
 /Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/base.symdefs \
-/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/commands.xml \
 /Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/complete-expr.grammar \
 /Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/default.grammar \
 /Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/diffeq.grammar \

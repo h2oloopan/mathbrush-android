@@ -26,6 +26,8 @@
 #include <fstream>
 #include <cstring>
 
+#include "wrapper.h"
+
 
 namespace scg {
 
@@ -972,6 +974,9 @@ math_recognizer_base::add_strokes(const RawStroke *strokes, size_t nstrokes) {
 		//VERBOSE(*verb_out << "adding stroke " << *s << std::endl);
 	 	stroke *stk = new stroke;
 #ifdef IPAD_RECOGNIZER
+		stk->input = triple(*s);
+#elif defined __ANDROID__
+		LOG("ANDROID DETECTED");
 		stk->input = triple(*s);
 #else
 		stk->input = s->copy();

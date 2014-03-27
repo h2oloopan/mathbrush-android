@@ -10,6 +10,8 @@
 #include <algorithm>
 #include <vector>
 
+#include "wrapper.h"
+
 namespace scg {
 
 template <typename T>
@@ -27,11 +29,17 @@ public:
 	~Stroke() { clear(); }
 
 	void clear() {
+		//LOG("Clearing stroke!");
 		delete[] x;
+		//LOG("2");
 		delete[] y;
+		//LOG("3");
 		delete[] time;
+		//LOG("4");
 		delete[] lspxc;
+		//LOG("5");
 		delete[] lspyc;
+		//LOG("6");
 		npoints = 0;
 		x = y = 0;
 		time = 0;

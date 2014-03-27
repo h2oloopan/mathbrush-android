@@ -4,17 +4,25 @@ import android.content.Context;
 import android.graphics.*;
 import android.view.*;
 import android.util.AttributeSet;
+import java.util.ArrayList;
+import java.lang.Math;
+
+import com.mathbrush.tools.*;
 
 public class CanvasView extends View {
+    private Recognizer recognizer;
 	//For drawing
 	private Canvas  mCanvas;
     private Bitmap  mBitmap;  
     private Path    mPath;
     private Paint   mPaint;
+    private ArrayList<Point> mPoints;
 
     private float mX, mY;
     private static final float TOUCH_TOLERANCE = 4;
-    
+    private static final int REC_SKIP = 2;
+    private int skip = 0;
+
     public CanvasView(Context c, AttributeSet attrs) {
         super(c, attrs);
 
@@ -27,6 +35,25 @@ public class CanvasView extends View {
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(12);
+        mPoints = new ArrayList<Point>();
+    }
+
+    public void setRecognizer(Recognizer r) {
+        this.recognizer = r;
+    }
+
+    public String recognize() {        
+        String result;
+        if (this.recognizer.recognize()) {
+            result = this.recognizer.getMathML();
+            this.recognizer.reset();
+        }
+        else{
+            Debugger.log("Something is wrong");
+            result = "Something is wrong";
+        }
+
+        return result;
     }
 
     @Override
@@ -51,6 +78,11 @@ public class CanvasView extends View {
         mPath.moveTo(x, y);
         mX = x;
         mY = y;
+
+        //store the point
+        skip = 1;
+        mPoints = new ArrayList<Point>();
+        mPoints.add(new Point((int)Math.floor(x), (int)Math.floor(y)));
     }
     private void touch_move(float x, float y) {
         float dx = Math.abs(x - mX);
@@ -59,6 +91,13 @@ public class CanvasView extends View {
             mPath.quadTo(mX, mY, (x + mX)/2, (y + mY)/2);
             mX = x;
             mY = y;
+
+            //store the point
+            if (skip >= REC_SKIP) {
+                mPoints.add(new Point((int)Math.floor(x), (int)Math.floor(y)));
+                skip = 0;
+            }
+            skip++;
         }
     }
     private void touch_up() {
@@ -67,6 +106,17 @@ public class CanvasView extends View {
         mCanvas.drawPath(mPath, mPaint);
         // kill this so we don't double draw
         mPath.reset();
+
+        //Add stroke to recognizer
+        int count = mPoints.size();
+        long[] xs = new long[count];
+        long[] ys = new long[count];
+        for (int i = 0; i < count; i++) {
+            xs[i] = (long)mPoints.get(i).x;
+            ys[i] = (long)mPoints.get(i).y;
+        }
+        Debugger.log("No. Points: " + count);
+        this.recognizer.addStroke(xs, ys, count);
     }
 
     @Override

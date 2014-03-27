@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"Jav",
+				"Java_com_mathbrush_tools_Recognizer_clear"
+			],
+			[
+				"recog",
+				"recognizer"
+			],
+			[
+				"canva",
+				"canvasView"
+			],
+			[
+				"point",
+				"mPoints"
+			],
+			[
+				"expre",
+				"exprTree"
+			],
+			[
+				"JNIE",
+				"JNIEnv"
+			],
+			[
+				"profile",
+				"profileName"
+			],
+			[
+				"shutdo",
+				"shutDownRecognizer"
+			],
+			[
+				"verbo",
+				"verboseFile"
+			],
+			[
 				"profi",
 				"profileName"
 			],
@@ -14,10 +50,6 @@
 			[
 				"nPro",
 				"nProfileName"
-			],
-			[
-				"profile",
-				"profilePath"
 			],
 			[
 				"pro",
@@ -44,69 +76,10 @@
 	"buffers":
 	[
 		{
-			"contents": "#include <iostream>\n#include <fstream>\n#include <jni.h>\n#include \"MathRecognizer.h\"\n#include \"wrapper.h\"\n\nextern \"C\" {\n/* TODO: We are now ignoring verbose mode */\nJNIEXPORT jboolean JNICALL Java_com_mathbrush_tools_Recognizer_initRecognizer(JNIEnv* env, jobject obj, jstring trainingPath, jstring profilePath, jstring profileName)\n{\n	\n	const char* nTrainingPath = env->GetStringUTFChars(trainingPath, NULL);\n	const char* nProfilePath = env->GetStringUTFChars(profilePath, NULL);\n	const char* nProfileName = env->GetStringUTFChars(profileName, NULL);\n\n\n	LOG(\"TPATH:\");\n	LOG(\"%s\", nTrainingPath);\n	LOG(\"PPATH:\");\n	LOG(\"%s\", nProfilePath);\n	LOG(\"PNAME:\");\n	LOG(\"%s\", nProfileName);\n\n	//TODO: Here I am fixing Verbosity to 0\n	scg::SetVerbosity(0);\n	scg::SetProfilePath(nTrainingPath);\n\n	LOG(\"TraingPath SET\");\n\n	scg::SetUserProfilePath(nProfilePath);\n\n	LOG(\"UserProfilePath SET\");\n\n	scg::SetTabletResolution(132);\n\n	env->ReleaseStringUTFChars(trainingPath, nTrainingPath);\n	env->ReleaseStringUTFChars(profilePath, nProfilePath);\n	\n	if (scg::InitializeRecognizer())\n		LOG(\"FALSE\");\n		env->ReleaseStringUTFChars(profileName, nProfileName);\n		return false;\n\n	if (strcmp(nProfileName, \"\"))\n	{\n		scg::SetUserProfile(nProfileName);\n		env->ReleaseStringUTFChars(profileName, nProfileName);\n	}\n\n	LOG(\"TRUE\");\n	return true;\n}\n}\n",
-			"file": "jni/recognition-wrapper.cpp",
-			"file_size": 1259,
-			"file_write_time": 1395684496000000,
+			"file": "src/com/mathbrush/views/CanvasView.java",
 			"settings":
 			{
-				"buffer_size": 1316,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/libmathreco/MathRecognizer.cpp",
-			"settings":
-			{
-				"buffer_size": 32290,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/com/mathbrush/tools/Debugger.java",
-			"settings":
-			{
-				"buffer_size": 143,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/libmathreco/common-utils.cpp",
-			"settings":
-			{
-				"buffer_size": 325,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/libmathreco/strutils.cc",
-			"settings":
-			{
-				"buffer_size": 753,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/libmathreco/grammar.cc",
-			"settings":
-			{
-				"buffer_size": 28679,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/include/error.h",
-			"settings":
-			{
-				"buffer_size": 2596,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "assets/mathbrush/partial-expr.grammar",
-			"settings":
-			{
-				"buffer_size": 16413,
+				"buffer_size": 4020,
 				"line_ending": "Unix"
 			}
 		}
@@ -135,24 +108,42 @@
 	},
 	"file_history":
 	[
+		"/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/.profile",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/CanvasView.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/main.xml",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/recog.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/MathRecognizer.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/stroke.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/matrix-parser.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/mathrecognizer-private.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/MathRecoTypes.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/MathRecognizer.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Debugger.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/recog.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/strutils.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/ink-io.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/wrappers/RecognitionWrapper.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/.gitignore",
+		"/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/verbose.txt",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/Android.mk",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/error.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/common-utils.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/grammar.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/partial-expr.grammar",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/unix-utils.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/AndroidManifest.xml",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/parms.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
 		"/Users/shengyingpan/Desktop/tombstone_08",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/algorithm.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/Android.mk",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/MathRecognizer.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/recog.cc",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/common-utils.cpp",
 		"/Users/shengyingpan/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Debugger.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/build.sh",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/CanvasView.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/main.xml",
 		"/Users/shengyingpan/Projects/mathbrush-android/res/menu/actions.xml",
 		"/Users/shengyingpan/Projects/MathBrush/mathBrushResearchII/Code/C++/mathreco/TRUNK/src/libmathreco/iohelp.cc",
 		"/Users/shengyingpan/Projects/MathBrush/mathBrushResearchII/Code/C++/mathreco/TRUNK/src/libmathreco/Makefile",
@@ -166,7 +157,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
@@ -176,6 +167,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"add_strokes",
+			"addstroke",
+			"stroke",
+			"release",
+			"struct Math",
+			"MathRecognizer",
+			"release",
+			"release()",
+			"triple",
+			"add_strokes",
+			"addstroke",
+			"refcount",
+			"refcount.re",
+			"LOG",
 			"parse_tree_builder",
 			"InitializeRecognizer",
 			"str2",
@@ -218,220 +223,33 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "jni/recognition-wrapper.cpp",
+					"file": "src/com/mathbrush/views/CanvasView.java",
 					"settings":
 					{
-						"buffer_size": 1316,
+						"buffer_size": 4020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								877,
-								877
+								2246,
+								2246
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 157.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "jni/mathreco/libmathreco/MathRecognizer.cpp",
-					"settings":
-					{
-						"buffer_size": 32290,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								30096,
-								30116
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 19560.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/com/mathbrush/tools/Debugger.java",
-					"settings":
-					{
-						"buffer_size": 143,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "jni/mathreco/libmathreco/common-utils.cpp",
-					"settings":
-					{
-						"buffer_size": 325,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								325,
-								325
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "jni/mathreco/libmathreco/strutils.cc",
-					"settings":
-					{
-						"buffer_size": 753,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 67.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "jni/mathreco/libmathreco/grammar.cc",
-					"settings":
-					{
-						"buffer_size": 28679,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1614,
-								1632
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3086.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "jni/mathreco/include/error.h",
-					"settings":
-					{
-						"buffer_size": 2596,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 779.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "assets/mathbrush/partial-expr.grammar",
-					"settings":
-					{
-						"buffer_size": 16413,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								99,
-								136
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 975.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -495,6 +313,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 214.0,
+	"side_bar_width": 224.0,
 	"status_bar_visible": true
 }

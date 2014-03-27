@@ -8,7 +8,10 @@ import android.view.MenuItem;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
+import android.graphics.Point;
 
+import java.lang.Math;
+import java.util.ArrayList;
 import java.io.*;
 
 import com.mathbrush.tools.*;
@@ -65,20 +68,18 @@ public class MathBrush extends Activity {
 		super.onCreate(savedInstanceState);
 		//Create main CanvasView for drawing
 		setContentView(R.layout.main);
-
-
 		//Copy assets to storage
 		copyAssets();
-
 		//Call to initialize recognizer
 		//Create folder if not exist
 		File dir = this.getDir("support", 0);
 		String trainingPath = dir.getAbsolutePath();
 		String profilePath = dir.getAbsolutePath();
 		String profileName = "";
-		String verboseFile = "";
-		Debugger.log(profilePath);
+		String verboseFile = dir.getAbsolutePath() + "/verbose.txt";
 		this.recognizer.init(trainingPath, profilePath, profileName, verboseFile);
+		CanvasView canvasView = (CanvasView)this.findViewById(R.id.canvas_view);
+		canvasView.setRecognizer(this.recognizer);
 	}
 	
 	//Attach button to action bar
@@ -95,6 +96,11 @@ public class MathBrush extends Activity {
 		switch (item.getItemId()) {
 			case R.id.action_recognize:
 				//When recognize button is clicked
+				CanvasView canvasView = (CanvasView)this.findViewById(R.id.canvas_view);
+				FormulaView formulaView = (FormulaView)this.findViewById(R.id.formula_view);
+				String ml = canvasView.recognize();
+				Debugger.log(ml);
+				formulaView.setText(ml);
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);

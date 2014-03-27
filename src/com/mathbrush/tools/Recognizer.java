@@ -13,6 +13,8 @@ public class Recognizer {
 	public native void addStroke(long[] xs, long[] ys, int count);
 	public native boolean recognize();
 	public native String getMathML();
-	//private native void shutDown();
-	//private native void changeProfile(String profileName);
+	public native void shutDown();
+	public native void clear();
+	public native void reset();
+	public native void changeProfile(String profileName);
 }

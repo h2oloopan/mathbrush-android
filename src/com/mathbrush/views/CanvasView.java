@@ -56,6 +56,14 @@ public class CanvasView extends View {
         return result;
     }
 
+    public void clean() {
+        //reset the recognizer for new operation
+        this.recognizer.reset();
+        //clean up the canvas
+        this.onDraw(mCanvas);
+        invalidate();
+    }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);

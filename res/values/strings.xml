@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_recognize">Recognize</string>
+    <string name="action_discard">Discard</string>
     <string name="app_name">MathBrush</string>
+    <string name="data_folder">support</string>
 </resources>

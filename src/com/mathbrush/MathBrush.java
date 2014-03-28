@@ -16,7 +16,6 @@ import java.io.*;
 
 import com.mathbrush.tools.*;
 import com.mathbrush.views.*;
-import com.mathbrush.wrappers.*;
 
 
 public class MathBrush extends Activity {
@@ -93,15 +92,18 @@ public class MathBrush extends Activity {
 	//Button click
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+			CanvasView canvasView = (CanvasView)this.findViewById(R.id.canvas_view);
+			FormulaView formulaView = (FormulaView)this.findViewById(R.id.formula_view);
 		switch (item.getItemId()) {
 			case R.id.action_recognize:
 				//When recognize button is clicked
-				CanvasView canvasView = (CanvasView)this.findViewById(R.id.canvas_view);
-				FormulaView formulaView = (FormulaView)this.findViewById(R.id.formula_view);
 				String ml = canvasView.recognize();
 				Debugger.log(ml);
 				formulaView.setText(ml);
 				return true;
+			case R.id.action_discard:
+				canvasView.clean();
+				formulaView.clean(); 
 			default:
 				return super.onOptionsItemSelected(item);
 		}

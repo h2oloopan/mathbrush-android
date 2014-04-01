@@ -4,4 +4,6 @@
     <string name="action_discard">Discard</string>
     <string name="app_name">MathBrush</string>
     <string name="data_folder">support</string>
+    <string name="verbose_file">verbose.txt</string>
+    <string name="data_files">mathbrush</string>
 </resources>

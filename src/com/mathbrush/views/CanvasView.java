@@ -7,11 +7,12 @@ import android.util.AttributeSet;
 import java.util.ArrayList;
 import java.lang.Math;
 
+import com.mathbrush.MathBrush;
 import com.mathbrush.tools.*;
 
 public class CanvasView extends View {
-    private Recognizer recognizer;
-	//For drawing
+	private Recognizer recognizer;
+    //For drawing
 	private Canvas  mCanvas;
     private Bitmap  mBitmap;  
     private Path    mPath;
@@ -36,10 +37,9 @@ public class CanvasView extends View {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(12);
         mPoints = new ArrayList<Point>();
-    }
 
-    public void setRecognizer(Recognizer r) {
-        this.recognizer = r;
+        MathBrush main = (MathBrush)c;
+        recognizer = main.recognizer;
     }
 
     public String recognize() {        

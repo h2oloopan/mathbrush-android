@@ -75,9 +75,8 @@ JNIEXPORT void JNICALL Java_com_mathbrush_tools_Recognizer_addStroke(JNIEnv* env
 	//convert to native arrays
 	jlong* jxs = env->GetLongArrayElements(xs, NULL);
 	jlong* jys = env->GetLongArrayElements(ys, NULL);
-
-	long nxs[count];
-	long nys[count];
+	long* nxs = new long[count];
+	long* nys = new long[count];
 
 	for (int i = 0; i < count; i++) {
 		nxs[i] = jxs[i];
@@ -87,7 +86,7 @@ JNIEXPORT void JNICALL Java_com_mathbrush_tools_Recognizer_addStroke(JNIEnv* env
 	scg::RawStroke* strokes = new scg::RawStroke[1];
 	strokes[0].set_points(nxs, nys, count);
 	recognizer->AddStrokes(strokes, 1);
-	//delete[] strokes;
+	delete[] strokes;
 
 	//Release allocated native arrays
 	env->ReleaseLongArrayElements(xs, jxs, 0);
@@ -97,9 +96,7 @@ JNIEXPORT void JNICALL Java_com_mathbrush_tools_Recognizer_addStroke(JNIEnv* env
 JNIEXPORT jboolean JNICALL Java_com_mathbrush_tools_Recognizer_recognize(JNIEnv* env, jobject obj) {
 	try {
 		exprTree = (scg::ExpressionTree*) recognizer->GetTopExpression();
-
 		if (exprTree == NULL) return false;
-
 	} catch (char* str) {
 		LOG("%s", str);
 		exprTree = NULL;

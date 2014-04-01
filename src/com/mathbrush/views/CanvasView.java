@@ -9,9 +9,9 @@ import java.lang.Math;
 
 import com.mathbrush.MathBrush;
 import com.mathbrush.tools.*;
+import com.mathbrush.tasks.*;
 
 public class CanvasView extends View {
-	private Recognizer recognizer;
     //For drawing
 	private Canvas  mCanvas;
     private Bitmap  mBitmap;  
@@ -37,28 +37,9 @@ public class CanvasView extends View {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(12);
         mPoints = new ArrayList<Point>();
-
-        MathBrush main = (MathBrush)c;
-        recognizer = main.recognizer;
-    }
-
-    public String recognize() {        
-        String result;
-        if (this.recognizer.recognize()) {
-            result = this.recognizer.getMathML();
-            this.recognizer.reset();
-        }
-        else{
-            Debugger.log("Something is wrong");
-            result = "Something is wrong";
-        }
-
-        return result;
     }
 
     public void clean() {
-        //reset the recognizer for new operation
-        this.recognizer.reset();
         //clean up the canvas
         this.onDraw(mCanvas);
         invalidate();
@@ -116,15 +97,8 @@ public class CanvasView extends View {
         mPath.reset();
 
         //Add stroke to recognizer
-        int count = mPoints.size();
-        long[] xs = new long[count];
-        long[] ys = new long[count];
-        for (int i = 0; i < count; i++) {
-            xs[i] = (long)mPoints.get(i).x;
-            ys[i] = (long)mPoints.get(i).y;
-        }
-        Debugger.log("No. Points: " + count);
-        this.recognizer.addStroke(xs, ys, count);
+        RecTask task = new RecTask((MathBrush)this.getContext());
+        task.execute(mPoints);
     }
 
     @Override

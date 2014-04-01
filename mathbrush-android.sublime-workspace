@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"mP",
+				"mPoints"
+			],
+			[
 				"formula",
 				"formulaView"
 			],
@@ -80,58 +84,34 @@
 	"buffers":
 	[
 		{
-			"file": "src/com/mathbrush/views/FormulaView.java",
-			"settings":
-			{
-				"buffer_size": 357,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/com/mathbrush/views/LoadView.java",
-			"settings":
-			{
-				"buffer_size": 1994,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "src/com/mathbrush/views/CanvasView.java",
 			"settings":
 			{
-				"buffer_size": 4245,
+				"buffer_size": 3485,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "res/layout/loader.xml",
+			"file": "src/com/mathbrush/tasks/RecTask.java",
 			"settings":
 			{
-				"buffer_size": 470,
+				"buffer_size": 1313,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "res/layout/main.xml",
+			"file": "src/com/mathbrush/tasks/LoadTask.java",
 			"settings":
 			{
-				"buffer_size": 666,
+				"buffer_size": 1873,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "res/menu/actions.xml",
+			"file": "src/com/mathbrush/MathBrush.java",
 			"settings":
 			{
-				"buffer_size": 412,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/include/stroke.h",
-			"settings":
-			{
-				"buffer_size": 6885,
+				"buffer_size": 1752,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,15 +119,7 @@
 			"file": "jni/recognition-wrapper.cpp",
 			"settings":
 			{
-				"buffer_size": 4439,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/mathreco/libmathreco/recog.cc",
-			"settings":
-			{
-				"buffer_size": 43674,
+				"buffer_size": 4396,
 				"line_ending": "Unix"
 			}
 		}
@@ -176,21 +148,27 @@
 	},
 	"file_history":
 	[
-		"/Users/shengyingpan/Projects/mathbrush-android/res/values/strings.xml",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask.java__",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecTask.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/loader.xml",
-		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/main.xml",
-		"/Users/shengyingpan/Projects/mathbrush-android/res/menu/actions.xml",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/LoadView.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/.profile",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/CanvasView.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/recog.cc",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/MathRecognizer.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/stroke.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/matrix-parser.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/LoadTask.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/LoadView.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/loader.xml",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/LoadItem.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/recog.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/stroke.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/res/menu/actions.xml",
+		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/main.xml",
+		"/Users/shengyingpan/Projects/mathbrush-android/res/values/strings.xml",
+		"/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/.profile",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/MathRecognizer.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/matrix-parser.cc",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/mathrecognizer-private.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/MathRecoTypes.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/MathRecognizer.h",
@@ -238,6 +216,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"something",
 			"add_strokes",
 			"R",
 			"add_strokes",
@@ -296,75 +275,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/com/mathbrush/views/FormulaView.java",
-					"settings":
-					{
-						"buffer_size": 357,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								127,
-								94
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/com/mathbrush/views/LoadView.java",
-					"settings":
-					{
-						"buffer_size": 1994,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								363,
-								363
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/com/mathbrush/views/CanvasView.java",
 					"settings":
 					{
-						"buffer_size": 4245,
+						"buffer_size": 3485,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2035,
-								2087
+								2889,
+								2889
 							]
 						],
 						"settings":
@@ -374,132 +301,106 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 644.0,
+						"translation.y": 997.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/com/mathbrush/tasks/RecTask.java",
+					"settings":
+					{
+						"buffer_size": 1313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								804,
+								804
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/com/mathbrush/tasks/LoadTask.java",
+					"settings":
+					{
+						"buffer_size": 1873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "res/layout/loader.xml",
+					"file": "src/com/mathbrush/MathBrush.java",
 					"settings":
 					{
-						"buffer_size": 470,
+						"buffer_size": 1752,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								443,
-								443
+								626,
+								626
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.tmLanguage"
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 128.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "res/layout/main.xml",
-					"settings":
-					{
-						"buffer_size": 666,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "res/menu/actions.xml",
-					"settings":
-					{
-						"buffer_size": 412,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "jni/mathreco/include/stroke.h",
-					"settings":
-					{
-						"buffer_size": 6885,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								209,
-								209
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 179.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
 					"file": "jni/recognition-wrapper.cpp",
 					"settings":
 					{
-						"buffer_size": 4439,
+						"buffer_size": 4396,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1956,
-								1956
+								2234,
+								2234
 							]
 						],
 						"settings":
@@ -508,34 +409,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 875.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "jni/mathreco/libmathreco/recog.cc",
-					"settings":
-					{
-						"buffer_size": 43674,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32103,
-								32114
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 14262.0,
+						"translation.y": 830.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

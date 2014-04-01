@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.content.Context;
-import android.util.Log;
-import android.graphics.Point;
 
 import com.mathbrush.tools.*;
 import com.mathbrush.views.*;
@@ -21,9 +19,16 @@ public class MathBrush extends Activity {
 	public MathBrush() {
 	}
 
+	//This is called when initialization is done
 	public void ready(Recognizer r) {
 		this.recognizer = r;
 		setContentView(R.layout.main);
+	}
+
+	//This is called when a new stroke has been recognized
+	public void update(String mathML) {
+		FormulaView formulaView = (FormulaView)this.findViewById(R.id.formula_view);
+		formulaView.setText(mathML);
 	}
 	
 	@Override
@@ -50,11 +55,10 @@ public class MathBrush extends Activity {
 		switch (item.getItemId()) {
 			case R.id.action_recognize:
 				//When recognize button is clicked
-				String ml = canvasView.recognize();
-				Debugger.log(ml);
-				formulaView.setText(ml);
+				//formulaView.setText(ml);
 				return true;
 			case R.id.action_discard:
+				recognizer.reset();
 				canvasView.clean();
 				formulaView.clean(); 
 			default:

@@ -11,6 +11,7 @@
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/R$style.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/R.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/tasks/LoadTask.class \
+/Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/tasks/RecTask.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/tools/Debugger.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/tools/Recognizer.class \
 /Users/shengyingpan/Projects/mathbrush-android/bin/classes/com/mathbrush/views/CanvasView.class \

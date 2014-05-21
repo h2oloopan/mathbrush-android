@@ -38,6 +38,10 @@ str2wstr(const std::string &s) {
 
 std::string
 wstr2str(const std::wstring &ws) {
+#ifdef __ANDROID__
+	std::string str = android::wstr2str(ws);
+	return str;
+#else
 	size_t sz = wcstombs(0, ws.c_str(), 0);
 	std::string s;
 	char *cs = new char[sz+1];
@@ -47,6 +51,7 @@ wstr2str(const std::wstring &ws) {
 	s = cs;
 	delete[] cs;
 	return s;
+#endif
 }
 
 }

@@ -24,10 +24,15 @@
 	#include <CoreGraphics/CGContext.h>
 #endif
 
+#ifdef __ANDROID__
+#include <jni.h>
+#endif
+
 #include "Types.h"
 
 namespace SCGRenderer
 {	
+
 #if defined(_MAC) || defined(_iPHONE)
 
 	class CDevice
@@ -63,6 +68,31 @@ namespace SCGRenderer
 	};
 #endif
 	
+#ifdef __ANDROID__
+	class CDevice
+	{
+	private:
+		JNIEnv* env;
+		jobject canvas;
+	public:
+		CDevice(JNIEnv* _env, jobject _canvas, jobject _paint);
+		~CDevice();
+		void createFont(std::string _name, float _size);
+		SCGRECT getStringBox(CFStringRef  _str);
+		SCGRECT getStringBox(wchar_t * _txt);
+		void setTextColor(TEXT_COLOR _color);
+		void setPenColor(PEN_COLOR _color);
+		void setBackColor(BACK_COLOR _color);
+		void drawText(CFStringRef _str, float _x, float _y);
+		void drawText(wchar_t * _txt, float _x, float _y);
+		void drawArc(float _x1, float _y1, float _x2, float _y2,SCGRECT _rect);
+		void fillRect(SCGRECT _rect);
+		void drawLine(float _x1, float _y1, float _x2, float _y2);
+		void drawLineTo(float _x1, float _y1);
+	};
+
+#endif	
+
 #ifdef _WINDOWS	
 	class CDevice
 	{
@@ -85,7 +115,7 @@ namespace SCGRenderer
 		void drawLine(float _x1, float _y1, float _x2, float _y2);
 		void drawLineTo(float _x1, float _y1);
 		SCGRECT getUnicodeExactBox(scg::unicode_char _ch); 
-	}
+	};
 #endif
 }
 

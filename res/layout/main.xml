@@ -3,7 +3,7 @@
     android:id="@+id/main_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
     <com.mathbrush.views.CanvasView 
     	android:id="@+id/canvas_view"
     	android:layout_width="fill_parent"

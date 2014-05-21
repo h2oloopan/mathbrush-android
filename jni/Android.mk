@@ -25,21 +25,28 @@ FILE_LIST := $(SYMBOLS_FILE_LIST_CC:$(LOCAL_PATH)/%=%) $(SYMBOLS_FILE_LIST_CPP:$
 LOCAL_SRC_FILES := $(FILE_LIST) wrapper.cc
 include $(BUILD_STATIC_LIBRARY)
 
+
+# Generate renderer static lib
+include $(CLEAR_VARS)
+R_PATH := renderer/src
+LOCAL_MODULE := renderer
+LOCAL_CPP_EXTENSION := .cpp
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/renderer/include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/renderer/include $(LOCAL_PATH) $(LOCAL_PATH)/mathreco/include
+LOCAL_CPPFLAGS += -fexceptions
+
+LOCAL_SRC_FILES := $(R_PATH)/CDevice.cpp $(R_PATH)/BuildTreeFromExpr.cpp $(R_PATH)/dictionaries.cpp $(R_PATH)/Functs.cpp $(R_PATH)/Lines.cpp $(R_PATH)/Symbol.cpp $(R_PATH)/SymbolBox.cpp $(R_PATH)/BuildTreeFromMathML.cpp wrapper.cc
+include $(BUILD_STATIC_LIBRARY)
+
+
 # Generate wrappers shared lib
 include $(CLEAR_VARS)
 LOCAL_MODULE := wrappers
-LOCAL_STATIC_LIBRARIES:= mathreco
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/mathreco/include
+LOCAL_STATIC_LIBRARIES:= mathreco 
+#renderer
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/mathreco/include 
+#$(LOCAL_PATH)/renderer/include
 LOCAL_SRC_FILES := recognition-wrapper.cpp
 LOCAL_LDLIBS := -lstdc++ -llog
 include $(BUILD_SHARED_LIBRARY)
-#LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/mathreco/include
-#include $(BUILD_STATIC_LIBRARY)
-
-#LOCAL_MODULE := wrappers
-#LOCAL_LDLIBS += -llog -ldl
-#LOCAL_C_INCLUDES := $(LOCAL_PATH)/mathreco/include
-#LOCAL_STATIC_LIBRARIES := mathreco
-#LOCAL_SRC_FILES := recognition-wrapper.cpp
-#include $(BUILD_SHARED_LIBRARY)
 

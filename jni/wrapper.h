@@ -9,6 +9,7 @@
 
 namespace android {
 	std::wstring str2wstr(const std::string &str);
+	std::string wstr2str(const std::wstring &wstr);
 }
 
 

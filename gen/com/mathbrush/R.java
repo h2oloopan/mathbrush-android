@@ -27,8 +27,7 @@ public final class R {
         public static final int load_screen=0x7f020003;
     }
     public static final class id {
-        public static final int action_discard=0x7f080006;
-        public static final int action_recognize=0x7f080005;
+        public static final int action_discard=0x7f080005;
         public static final int canvas_view=0x7f080003;
         public static final int formula_view=0x7f080004;
         public static final int load_view=0x7f080001;

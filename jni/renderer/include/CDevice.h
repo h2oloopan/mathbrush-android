@@ -78,7 +78,6 @@ namespace SCGRenderer
 		CDevice(JNIEnv* _env, jobject _canvas, jobject _paint);
 		~CDevice();
 		void createFont(std::string _name, float _size);
-		SCGRECT getStringBox(CFStringRef  _str);
 		SCGRECT getStringBox(wchar_t * _txt);
 		void setTextColor(TEXT_COLOR _color);
 		void setPenColor(PEN_COLOR _color);

@@ -232,6 +232,10 @@ namespace SCGRenderer
     	env->CallVoidMethod(paint, setTextSize, size);
     }
 
+    SCGRECT CDevice::getStringBox(wchar_t * str)
+    {
+    	
+    }
 
 
 #endif

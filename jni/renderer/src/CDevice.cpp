@@ -205,19 +205,24 @@ namespace SCGRenderer
 
 //#############################################################################################################
 #ifdef __ANDROID__
-    CDevice::CDevice(JNIEnv* _env, jobject _canvas, jobject _paint)
+    CDevice::CDevice(JNIEnv* _env, jobject _device)
     {
     	env = _env;
-    	canvas = _canvas;
-    	paint = _paint;
+    	device = _device;
     }
     CDevice::~CDevice()
     {
-    	
     }
     
     void CDevice::createFont(std::string _name, float _size)
     {
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "createFont", "(Ljava/lang/String;F)V");
+    	jstring name = env->NewStringUTF(_name.c_str());
+    	jfloat size = (jfloat)_size;
+    	env->CallVoidMethod(device, jmi, name, size);
+
+    	/*
     	jclass Typeface = env->FindClass("android/graphics/Typeface");
     	jmethodID create = env->GetStaticMethodId(Typeface, "create", "(Ljava/lang/String;I)Landroid/graphics/Typeface");
     	jstring name = env->NewStringUTF(_name.c_str());
@@ -230,11 +235,12 @@ namespace SCGRenderer
     	env->CallVoidMethod(paint, setTypeface, font);
     	jfloat size = (jfloat)_size;
     	env->CallVoidMethod(paint, setTextSize, size);
+    	*/
     }
 
     SCGRECT CDevice::getStringBox(wchar_t * str)
     {
-    	
+
     }
 
 

@@ -8,6 +8,7 @@
  */
 
 #include "CDevice.h"
+#include "wrapper.h"
 
 namespace SCGRenderer
 {	
@@ -216,31 +217,25 @@ namespace SCGRenderer
     
     void CDevice::createFont(std::string _name, float _size)
     {
+    	jstring name = env->NewStringUTF(_name.c_str());
+    	jfloat size = (jfloat)_size;
+
     	jclass ADevice = env->GetObjectClass(device);
     	jmethodID jmi = env->GetMethodId(ADevice, "createFont", "(Ljava/lang/String;F)V");
-    	jstring name = env->NewStringUTF(_name.c_str());
-    	jfloat size = (jfloat)_size;
     	env->CallVoidMethod(device, jmi, name, size);
-
-    	/*
-    	jclass Typeface = env->FindClass("android/graphics/Typeface");
-    	jmethodID create = env->GetStaticMethodId(Typeface, "create", "(Ljava/lang/String;I)Landroid/graphics/Typeface");
-    	jstring name = env->NewStringUTF(_name.c_str());
-    	jobject font = env->CallStaticObjectMethod(Typeface, create, name, 0);
-
-    	jclass Paint = env->GetObjectClass(paint);
-    	jmethodID setTypeface = env->GetMethodId(Paint, "setTypeface", "(Landroid/graphics/Typeface)V");
-    	jmethodID setTextSize = env->GetMethodId(Paint, "setTextSize", "(F)V");
-
-    	env->CallVoidMethod(paint, setTypeface, font);
-    	jfloat size = (jfloat)_size;
-    	env->CallVoidMethod(paint, setTextSize, size);
-    	*/
     }
 
-    SCGRECT CDevice::getStringBox(wchar_t * str)
+    SCGRECT CDevice::getStringBox(wchar_t * wstr)
     {
+    	std::string str = android::wstr2str(wstr);
+    	jstring jstr = env->NewStringUTF(str.c_str());
 
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "getStringBox", "(Ljava/lang/String)[I");
+    	jintArray result = env->CallObjectMethod(device, jmi, jstr);
+
+    	//here we are assuming result[0] is x and result[1] is y
+    	return SCGRECT(0, 0, (int)result[0], (int)result[1]);
     }
 
 

@@ -314,7 +314,52 @@ namespace SCGRenderer
 
     void drawArc(float _x1, float _y1, float _x2, float _y2, SCGRECT _rect)
     {
-    	
+    	jfloat x1 = (jfloat)_x1;
+    	jfloat y1 = (jfloat)_y1;
+    	jfloat x2 = (jfloat)_x2;
+    	jfloat y2 = (jfloat)_y2;
+    	jfloat left = (jfloat)(_rect.left);
+    	jfloat top = (jfloat)(_rect.top);
+    	jfloat right = (jfloat)(_rect.right);
+    	jfloat bottom = (jfloat)(_rect.bottom);
+
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "drawArc", "(F;F;F;F;F;F;F;F)V");
+    	env->CallVoidMethod(device, jmi, x1, y1, x2, y2, left, top, right, bottom);
+    }
+
+    void fillRect(SCGRECT _rect)
+    {
+    	jfloat left = (jfloat)(_rect.left);
+    	jfloat top = (jfloat)(_rect.top);
+    	jfloat right = (jfloat)(_rect.right);
+    	jfloat bottom = (jfloat)(_rect.bottom);
+
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "fillRect", "(F;F;F;F)V");
+    	env->CallVoidMethod(device, jmi, left, top, right, bottom);
+    }
+
+    void drawLine(float _x1, float _y1, float _x2, float _y2)
+    {
+    	jfloat x1 = (jfloat)_x1;
+    	jfloat y1 = (jfloat)_y1;
+    	jfloat x2 = (jfloat)_x2;
+    	jfloat y2 = (jfloat)_y2;
+
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "drawLine", "(F;F;F;F)V");
+    	env->CallVoidMethod(device, jmi, x1, y1, x2, y2);
+    }
+
+    void drawLineTo(float _x1, float _y1)
+    {
+    	jfloat x1 = (jfloat)_x1;
+    	jfloat y1 = (jfloat)_y1;
+
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "drawLineTo", "(F;F)V");
+    	env->CallVoidMethod(device, jmi, x1, y1);
     }
 
 

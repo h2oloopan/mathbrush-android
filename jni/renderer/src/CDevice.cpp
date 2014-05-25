@@ -225,9 +225,9 @@ namespace SCGRenderer
     	env->CallVoidMethod(device, jmi, name, size);
     }
 
-    SCGRECT CDevice::getStringBox(wchar_t * wstr)
+    SCGRECT CDevice::getStringBox(wchar_t * _txt)
     {
-    	std::string str = android::wstr2str(wstr);
+    	std::string str = android::wstr2str(_txt);
     	jstring jstr = env->NewStringUTF(str.c_str());
 
     	jclass ADevice = env->GetObjectClass(device);
@@ -236,6 +236,48 @@ namespace SCGRenderer
 
     	//here we are assuming result[0] is x and result[1] is y
     	return SCGRECT(0, 0, (int)result[0], (int)result[1]);
+    }
+
+    void setTextColor(TEXT_COLOR _color)
+    {
+    	int R, G, B;
+    	if (_color == SELECTEDTEXTCOLOR)
+		{
+			R = MYSELECTEDTEXTCOLOR_R;
+			G = MYSELECTEDTEXTCOLOR_G;
+			B = MYSELECTEDTEXTCOLOR_B;
+		}	
+		else
+		{
+			R = MYTEXTCOLOR_R;
+			G = MYTEXTCOLOR_G;
+			B = MYTEXTCOLOR_B;
+		}	
+
+		jclass ADevice = env->GetObjectClass(device);
+		jmethodID jmi = env->GetMethodId(ADevice, "setTextColor", "(I;I;I)V");
+		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
+    }
+
+    void setPenColor(PEN_COLOR _color)
+    {
+		int R, G, B;
+    	if (_color == SELECTEDTEXTCOLOR)
+		{
+			R = MYSELECTEDTEXTCOLOR_R;
+			G = MYSELECTEDTEXTCOLOR_G;
+			B = MYSELECTEDTEXTCOLOR_B;
+		}	
+		else
+		{
+			R = MYTEXTCOLOR_R;
+			G = MYTEXTCOLOR_G;
+			B = MYTEXTCOLOR_B;
+		}	
+
+		jclass ADevice = env->GetObjectClass(device);
+		jmethodID jmi = env->GetMethodId(ADevice, "setPenColor", "(I;I;I)V");
+		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
     }
 
 

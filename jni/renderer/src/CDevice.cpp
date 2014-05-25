@@ -280,6 +280,43 @@ namespace SCGRenderer
 		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
     }
 
+    void setBackColor(BACK_COLOR _color)
+    {
+    	int R, G, B;
+    	if (_color == HIGHLIGHTBACKCOLOR)
+    	{
+    		R = MYBACKHILIGHT_R;
+    		G = MYBACKHILIGHT_G;
+    		B = MYBACKHILIGHT_B;
+    	}
+		else
+		{
+			R = MYBACKCOLOR_R;
+			G = MYBACKCOLOR_G;
+			B = MYBACKCOLOR_B;
+		} 
+		jclass ADevice = env->GetObjectClass(device);
+		jmethodID jmi = env->GetMethodId(ADevice, "setBackColor", "(I;I;I)V");
+		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
+    }
+
+    void drawText(wchar_t* _txt, float _x, float _y)
+    {
+    	std::string str = android::wstr2str(_txt);
+    	jstring jstr = env->NewStringUTF(str.c_str());
+    	jfloat x = (jfloat)x;
+    	jfloat y = (jfloat)y;
+
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodId(ADevice, "drawText", "(Ljava/lang/String;F;F)V");
+    	env->CallVoidMethod(device, jmi, jstr, x, y);
+    }
+
+    void drawArc(float _x1, float _y1, float _x2, float _y2, SCGRECT _rect)
+    {
+    	
+    }
+
 
 #endif
 

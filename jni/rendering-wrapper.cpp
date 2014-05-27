@@ -23,4 +23,23 @@ extern "C" {
 		SCGRenderer::loadDictionaries();
 	}
 
+	JNIEXPORT jboolean JNICALL Java_com_mathbrush_tools_Renderer_display(JNIEnv* env, jobject obj, jstring jMathML, jint x, jint y)
+	{
+		if (displayTree != NULL)
+		{
+			delete displayTree;
+			crtSymbol = NULL;
+			variables.clear();
+		}
+
+		std::string mathML(env->GetStringUTFChars(jMathML, NULL));
+		displayTree = SCGRenderer::getDisplayTree(mathML, device);
+
+		if (displayTree == NULL)
+			return false;
+
+		displayTree.moveTo((int)x, (int)y);
+		displayTree->display(device, false);
+	}
+
 }

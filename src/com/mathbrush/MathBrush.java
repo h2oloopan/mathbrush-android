@@ -28,7 +28,7 @@ public class MathBrush extends Activity {
 	//This is called when a new stroke has been recognized
 	public void update(String mathML) {
 		FormulaView formulaView = (FormulaView)this.findViewById(R.id.formula_view);
-		formulaView.update(mathML);
+		formulaView.display(mathML);
 	}
 	
 	@Override
@@ -56,7 +56,7 @@ public class MathBrush extends Activity {
 			case R.id.action_discard:
 				recognizer.reset();
 				canvasView.clean();
-				formulaView.clean(); 
+				//formulaView.clean(); 
 			default:
 				return super.onOptionsItemSelected(item);
 		}

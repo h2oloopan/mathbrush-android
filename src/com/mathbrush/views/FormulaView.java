@@ -10,10 +10,12 @@ import com.mathbrush.tools.ADevice;
 public class FormulaView extends View {
 
 	private ADevice device;
+	private Renderer renderer;
 
 	public FormulaView(Context c, AttributeSet attrs) {
 		super(c, attrs);
 		//initialization
+		renderer = new Renderer();
 	}
 
 	@Override
@@ -27,6 +29,11 @@ public class FormulaView extends View {
         	paint.setStrokeCap(Paint.Cap.ROUND);
         	paint.setStrokeWidth(12);
 			device = new ADevice(this, canvas, paint);
+			renderer.init(device, 60);
 		}			
+	}
+
+	public void display(String mathML) {
+		renderer.display(mathML, 50, 50);
 	}
 }

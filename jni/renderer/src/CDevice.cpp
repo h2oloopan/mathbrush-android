@@ -240,6 +240,7 @@ namespace SCGRenderer
 
     void setTextColor(TEXT_COLOR _color)
     {
+    	int A = 255;
     	int R, G, B;
     	if (_color == SELECTEDTEXTCOLOR)
 		{
@@ -256,11 +257,12 @@ namespace SCGRenderer
 
 		jclass ADevice = env->GetObjectClass(device);
 		jmethodID jmi = env->GetMethodId(ADevice, "setTextColor", "(I;I;I)V");
-		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
+		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
     void setPenColor(PEN_COLOR _color)
     {
+    	int A = 255;
 		int R, G, B;
     	if (_color == SELECTEDTEXTCOLOR)
 		{
@@ -277,11 +279,12 @@ namespace SCGRenderer
 
 		jclass ADevice = env->GetObjectClass(device);
 		jmethodID jmi = env->GetMethodId(ADevice, "setPenColor", "(I;I;I)V");
-		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
+		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
     void setBackColor(BACK_COLOR _color)
     {
+    	int A = 255;
     	int R, G, B;
     	if (_color == HIGHLIGHTBACKCOLOR)
     	{
@@ -297,7 +300,7 @@ namespace SCGRenderer
 		} 
 		jclass ADevice = env->GetObjectClass(device);
 		jmethodID jmi = env->GetMethodId(ADevice, "setBackColor", "(I;I;I)V");
-		env->CallVoidMethod(device, jmi, (jint)R, (jint)G, (jint)B);
+		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
     void drawText(wchar_t* _txt, float _x, float _y)

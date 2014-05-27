@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"JNIE",
+				"JNIEnv"
+			],
+			[
+				"MYBACK",
+				"MYBACKCOLOR_B"
+			],
+			[
+				"MYB",
+				"MYBACKCOLOR_G"
+			],
+			[
+				"Back",
+				"BACK_COLOR"
+			],
+			[
+				"MYTE",
+				"MYTEXTCOLOR_B"
+			],
+			[
+				"MY",
+				"MYSELECTEDTEXTCOLOR_B"
+			],
+			[
 				"mP",
 				"mPoints"
 			],
@@ -30,10 +54,6 @@
 			[
 				"expre",
 				"exprTree"
-			],
-			[
-				"JNIE",
-				"JNIEnv"
 			],
 			[
 				"profile",
@@ -83,6 +103,25 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "jni/recognition-wrapper.cpp",
+			"settings":
+			{
+				"buffer_size": 4396,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#include <jni.h>\n#include \"Functs.h\"\n\nextern \"C\" {\n\n	static SCGRenderer::CDevice* device;\n	static SCGRenderer::CSymbol* displayTree;\n	static SCGRenderer::CSymbol* crtSymbol;\n	static std::vector<SCGRenderer::CSymbol*> variables;\n	static scg::ExpressionTree* exprTree;\n	static std::string mathML;\n	static bool inkChanged;\n\n	JNIEXPORT void JNICALL Java_com_mathbrush_tools_Renderer_init(JNIEnv* env, jobject obj, jobject aDevice, jint fontSize)\n	{\n		exprTree = NULL;\n		inkChanged = false;\n		displayTree = NULL;\n		crtSymbol = NULL;\n		mathML = \"\";\n		device = new SCGRenderer::CDevice(env, aDevice);\n		device->createFont(\"times\", (int)fontSize);\n		SCGRenderer::loadDictionaries();\n	}\n\n	JNIEXPORT jboolean JNICALL Java_com_mathbrush_tools_Renderer_display(JNIEnv* env, jobject obj, jint x, jint y, jboolean breakLine, jint screenWidth)\n\n}",
+			"file": "jni/rendering-wrapper.cpp",
+			"file_size": 680,
+			"file_write_time": 1401056935000000,
+			"settings":
+			{
+				"buffer_size": 831,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -108,6 +147,8 @@
 	},
 	"file_history":
 	[
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/device-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/strutils.cc",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/CDevice.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/strutils.h",
@@ -116,10 +157,8 @@
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/Android.mk",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/device-wrapper.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Device.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
 		"/Users/shengyingpan/Projects/MathJax/index.html",
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/MathJax/config/TeX-AMS-MML_SVG.js",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
@@ -253,8 +292,150 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "jni/recognition-wrapper.cpp",
+					"settings":
+					{
+						"buffer_size": 4396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								536
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1051.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "jni/rendering-wrapper.cpp",
+					"settings":
+					{
+						"buffer_size": 831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								827,
+								827
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

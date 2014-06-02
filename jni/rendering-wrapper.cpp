@@ -1,5 +1,6 @@
 #include <jni.h>
 #include "Functs.h"
+#include "CDevice.h"
 
 extern "C" {
 
@@ -32,14 +33,17 @@ extern "C" {
 			variables.clear();
 		}
 
-		std::string mathML(env->GetStringUTFChars(jMathML, NULL));
+		const char* cMathML = env->GetStringUTFChars(jMathML, NULL);
+		std::string mathML(cMathML);
 		displayTree = SCGRenderer::getDisplayTree(mathML, device);
 
 		if (displayTree == NULL)
 			return false;
 
-		displayTree.moveTo((int)x, (int)y);
+		displayTree->moveTo((int)x, (int)y);
 		displayTree->display(device, false);
+
+		env->ReleaseStringUTFChars(jMathML, cMathML);
 	}
 
 }

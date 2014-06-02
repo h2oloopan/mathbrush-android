@@ -104,21 +104,18 @@
 	"buffers":
 	[
 		{
-			"file": "jni/recognition-wrapper.cpp",
+			"file": "jni/Android.mk",
 			"settings":
 			{
-				"buffer_size": 4396,
+				"buffer_size": 2174,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "#include <jni.h>\n#include \"Functs.h\"\n\nextern \"C\" {\n\n	static SCGRenderer::CDevice* device;\n	static SCGRenderer::CSymbol* displayTree;\n	static SCGRenderer::CSymbol* crtSymbol;\n	static std::vector<SCGRenderer::CSymbol*> variables;\n	static scg::ExpressionTree* exprTree;\n	static std::string mathML;\n	static bool inkChanged;\n\n	JNIEXPORT void JNICALL Java_com_mathbrush_tools_Renderer_init(JNIEnv* env, jobject obj, jobject aDevice, jint fontSize)\n	{\n		exprTree = NULL;\n		inkChanged = false;\n		displayTree = NULL;\n		crtSymbol = NULL;\n		mathML = \"\";\n		device = new SCGRenderer::CDevice(env, aDevice);\n		device->createFont(\"times\", (int)fontSize);\n		SCGRenderer::loadDictionaries();\n	}\n\n	JNIEXPORT jboolean JNICALL Java_com_mathbrush_tools_Renderer_display(JNIEnv* env, jobject obj, jint x, jint y, jboolean breakLine, jint screenWidth)\n\n}",
-			"file": "jni/rendering-wrapper.cpp",
-			"file_size": 680,
-			"file_write_time": 1401056935000000,
+			"file": "jni/renderer/src/BuildTreeFromMathML.cpp",
 			"settings":
 			{
-				"buffer_size": 831,
+				"buffer_size": 11682,
 				"line_ending": "Unix"
 			}
 		}
@@ -147,23 +144,30 @@
 	},
 	"file_history":
 	[
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/device-wrapper.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/strutils.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/Makefile",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/BuildTreeFromMathML.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/Symbol.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/ADevice.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/CDevice.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/strutils.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/CDevice.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/rendering-wrapper.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Renderer.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/CanvasView.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/strutils.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecTask.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/device-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/strutils.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/Android.mk",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Device.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.h",
 		"/Users/shengyingpan/Projects/MathJax/index.html",
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/MathJax/config/TeX-AMS-MML_SVG.js",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/res/menu/actions.xml",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/main.xml",
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/MathJax/jax/output/SVG/config.js",
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/MathJax/LICENSE",
@@ -172,12 +176,8 @@
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Types.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/BuildTreeFromExpr.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Symbol.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/Makefile",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Functs.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/CDevice.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/LoadTask.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/CanvasView.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecTask.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask.java__",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/LoadView.java",
@@ -230,9 +230,11 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"getUnicode",
+			"GetMethodId",
 			"something",
 			"add_strokes",
 			"R",
@@ -281,6 +283,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"GetMethodID",
 			""
 		],
 		"reverse": false,
@@ -297,18 +300,89 @@
 			[
 				{
 					"buffer": 0,
-					"file": "jni/recognition-wrapper.cpp",
+					"file": "jni/Android.mk",
 					"settings":
 					{
-						"buffer_size": 4396,
+						"buffer_size": 2174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								355,
-								536
+								1259,
+								1259
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "jni/renderer/src/BuildTreeFromMathML.cpp",
+					"settings":
+					{
+						"buffer_size": 11682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
 							]
 						],
 						"settings":
@@ -359,76 +433,6 @@
 							],
 							"syntax": "Packages/C++/C++.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1051.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "jni/rendering-wrapper.cpp",
-					"settings":
-					{
-						"buffer_size": 831,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								827,
-								827
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

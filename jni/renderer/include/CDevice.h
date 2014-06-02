@@ -75,7 +75,7 @@ namespace SCGRenderer
 		JNIEnv* env;
 		jobject device; //this device is a java ADevice
 	public:
-		CDevice(jobject _device);
+		CDevice(JNIEnv* _env, jobject _device);
 		~CDevice();
 		void createFont(std::string _name, float _size);
 		SCGRECT getStringBox(wchar_t * _txt);
@@ -87,6 +87,7 @@ namespace SCGRenderer
 		void fillRect(SCGRECT _rect);
 		void drawLine(float _x1, float _y1, float _x2, float _y2);
 		void drawLineTo(float _x1, float _y1);
+		SCGRECT getUnicodeExactBox(scg::unicode_char _ch){return getStringBox((wchar_t*) _ch);};
 	};
 
 #endif	

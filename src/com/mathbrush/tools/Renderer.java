@@ -10,5 +10,6 @@ public class Renderer {
 	}
 
 	public native void init(ADevice device, int fontSize);
-	public native boolean display(String mathML, int x, int y);
+	//public native boolean display(String mathML, int x, int y);
+	public native boolean display(long exprTree, int x, int y);
 }

@@ -11,6 +11,8 @@
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
+ #include "wrapper.h"
+
 //using namespace std; // to allow extern for a pointer ??
 
 namespace SCGRenderer
@@ -254,11 +256,13 @@ namespace SCGRenderer
 		else 
 		{
 			/* check if validation suceeded */
+			/*
 			if (ctxt->valid == 0)
 			{
 				parseErrorStr = "Failed to validate\n";
 				return NULL;
 			}
+			*/
 		}
 
 		return doc;
@@ -278,9 +282,10 @@ namespace SCGRenderer
 		
 		/*parse the file and get the DOM */
 		doc = getDocument(_mathML);
-		
+
 		if (doc == NULL) 
 		{
+			LOG("%s", parseErrorStr.c_str());
 			return NULL;
 		}
 		
@@ -317,9 +322,13 @@ namespace SCGRenderer
 		CSymbol * dispExpr = parseMathML(_mathML);
 		
 		if (dispExpr == NULL)
+		{
+			LOG("1");
 			return NULL;
+		}
 		else if (recognitionError == EXPRTYPE_ERR)
 		{
+			LOG("2");
 			delete dispExpr;
 			recognitionError = ERRORFREE;
 			return NULL;

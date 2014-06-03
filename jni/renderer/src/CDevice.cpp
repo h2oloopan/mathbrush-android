@@ -227,11 +227,13 @@ namespace SCGRenderer
 
     SCGRECT CDevice::getStringBox(wchar_t * _txt)
     {
-    	std::string str = android::wstr2str(_txt);
+    	std::wstring wStr = std::wstring(_txt);
+    	std::string str(wStr.begin(), wStr.end());
+    	LOG("INSIDE: %s", _txt);
+    	LOG("OUTSIDE: %s", str.c_str());
     	jstring jstr = env->NewStringUTF(str.c_str());
-
     	jclass ADevice = env->GetObjectClass(device);
-    	jmethodID jmi = env->GetMethodID(ADevice, "getStringBox", "(Ljava/lang/String)[I");
+    	jmethodID jmi = env->GetMethodID(ADevice, "getStringBox", "(Ljava/lang/String;)[I");
     	jintArray result = (jintArray)(env->CallObjectMethod(device, jmi, jstr));
 
     	jint* elements = env->GetIntArrayElements(result, 0);
@@ -259,7 +261,7 @@ namespace SCGRenderer
 		}	
 
 		jclass ADevice = env->GetObjectClass(device);
-		jmethodID jmi = env->GetMethodID(ADevice, "setTextColor", "(I;I;I)V");
+		jmethodID jmi = env->GetMethodID(ADevice, "setTextColor", "(IIII)V");
 		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
@@ -281,7 +283,7 @@ namespace SCGRenderer
 		}	
 
 		jclass ADevice = env->GetObjectClass(device);
-		jmethodID jmi = env->GetMethodID(ADevice, "setPenColor", "(I;I;I)V");
+		jmethodID jmi = env->GetMethodID(ADevice, "setPenColor", "(IIII)V");
 		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
@@ -302,7 +304,7 @@ namespace SCGRenderer
 			B = MYBACKCOLOR_B;
 		} 
 		jclass ADevice = env->GetObjectClass(device);
-		jmethodID jmi = env->GetMethodID(ADevice, "setBackColor", "(I;I;I)V");
+		jmethodID jmi = env->GetMethodID(ADevice, "setBackColor", "(IIII)V");
 		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
@@ -314,7 +316,7 @@ namespace SCGRenderer
     	jfloat y = (jfloat)y;
 
     	jclass ADevice = env->GetObjectClass(device);
-    	jmethodID jmi = env->GetMethodID(ADevice, "drawText", "(Ljava/lang/String;F;F)V");
+    	jmethodID jmi = env->GetMethodID(ADevice, "drawText", "(Ljava/lang/String;FF)V");
     	env->CallVoidMethod(device, jmi, jstr, x, y);
     }
 
@@ -330,7 +332,7 @@ namespace SCGRenderer
     	jfloat bottom = (jfloat)(_rect.bottom);
 
     	jclass ADevice = env->GetObjectClass(device);
-    	jmethodID jmi = env->GetMethodID(ADevice, "drawArc", "(F;F;F;F;F;F;F;F)V");
+    	jmethodID jmi = env->GetMethodID(ADevice, "drawArc", "(FFFFFFFF)V");
     	env->CallVoidMethod(device, jmi, x1, y1, x2, y2, left, top, right, bottom);
     }
 
@@ -342,7 +344,7 @@ namespace SCGRenderer
     	jfloat bottom = (jfloat)(_rect.bottom);
 
     	jclass ADevice = env->GetObjectClass(device);
-    	jmethodID jmi = env->GetMethodID(ADevice, "fillRect", "(F;F;F;F)V");
+    	jmethodID jmi = env->GetMethodID(ADevice, "fillRect", "(FFFF)V");
     	env->CallVoidMethod(device, jmi, left, top, right, bottom);
     }
 
@@ -354,7 +356,7 @@ namespace SCGRenderer
     	jfloat y2 = (jfloat)_y2;
 
     	jclass ADevice = env->GetObjectClass(device);
-    	jmethodID jmi = env->GetMethodID(ADevice, "drawLine", "(F;F;F;F)V");
+    	jmethodID jmi = env->GetMethodID(ADevice, "drawLine", "(FFFF)V");
     	env->CallVoidMethod(device, jmi, x1, y1, x2, y2);
     }
 
@@ -364,7 +366,7 @@ namespace SCGRenderer
     	jfloat y1 = (jfloat)_y1;
 
     	jclass ADevice = env->GetObjectClass(device);
-    	jmethodID jmi = env->GetMethodID(ADevice, "drawLineTo", "(F;F)V");
+    	jmethodID jmi = env->GetMethodID(ADevice, "drawLineTo", "(FF)V");
     	env->CallVoidMethod(device, jmi, x1, y1);
     }
 

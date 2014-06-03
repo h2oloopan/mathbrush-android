@@ -105,6 +105,15 @@ JNIEXPORT jboolean JNICALL Java_com_mathbrush_tools_Recognizer_recognize(JNIEnv*
 	return true;
 }
 
+JNIEXPORT jlong JNICALL Java_com_mathbrush_tools_Recognizer_getExprTree(JNIEnv* env, jobject obj) {
+	if (exprTree != NULL) {
+		return (jlong)exprTree;
+	}
+	else{
+		return (jlong)0;
+	}
+}
+
 JNIEXPORT jstring JNICALL Java_com_mathbrush_tools_Recognizer_getMathML(JNIEnv* env, jobject obj) {
 	std::string result = "";
 	if (exprTree != NULL) {

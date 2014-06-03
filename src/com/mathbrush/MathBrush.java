@@ -28,7 +28,8 @@ public class MathBrush extends Activity {
 	//This is called when a new stroke has been recognized
 	public void update(String mathML) {
 		FormulaView formulaView = (FormulaView)this.findViewById(R.id.formula_view);
-		formulaView.display(mathML);
+		//formulaView.display(mathML);
+		formulaView.display(recognizer.getExprTree());
 	}
 	
 	@Override

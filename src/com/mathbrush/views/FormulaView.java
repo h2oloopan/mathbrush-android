@@ -6,6 +6,8 @@ import android.graphics.*;
 import android.view.*;
 
 import com.mathbrush.tools.ADevice;
+import com.mathbrush.tools.Renderer;
+import com.mathbrush.tools.Debugger;
 
 public class FormulaView extends View {
 
@@ -24,16 +26,25 @@ public class FormulaView extends View {
 			Paint paint = new Paint();
 			paint.setAntiAlias(true);
 			paint.setDither(true);
-			paint.setStyle(Paint.Style.STROKE);
+			paint.setStyle(Paint.Style.FILL);
         	paint.setStrokeJoin(Paint.Join.ROUND);
         	paint.setStrokeCap(Paint.Cap.ROUND);
-        	paint.setStrokeWidth(12);
+        	paint.setStrokeWidth(1);
 			device = new ADevice(this, canvas, paint);
+
 			renderer.init(device, 60);
+			device.drawText("TEST", 50, 50);
 		}			
 	}
 
+	/*
 	public void display(String mathML) {
+		Debugger.log(mathML);
 		renderer.display(mathML, 50, 50);
+	}
+	*/
+
+	public void display(long exprTree) {
+		renderer.display(exprTree, 50, 50);
 	}
 }

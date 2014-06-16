@@ -82,6 +82,7 @@ namespace SCGRenderer
 		void setTextColor(TEXT_COLOR _color);
 		void setPenColor(PEN_COLOR _color);
 		void setBackColor(BACK_COLOR _color);
+		void drawText(std::string _txt, float _x, float _y);
 		void drawText(wchar_t * _txt, float _x, float _y);
 		void drawArc(float _x1, float _y1, float _x2, float _y2,SCGRECT _rect);
 		void fillRect(SCGRECT _rect);

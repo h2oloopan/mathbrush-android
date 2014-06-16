@@ -25,6 +25,8 @@ extern "C" {
 		jobject aDeviceGlobal = reinterpret_cast<jobject>(env->NewGlobalRef(aDevice));
 		device = new SCGRenderer::CDevice(env, aDeviceGlobal);
 		device->createFont("times", (int)fontSize);
+		
+		//device->drawText("test", 50, 50);
 		SCGRenderer::loadDictionaries();
 	}
 
@@ -41,6 +43,9 @@ extern "C" {
 		//const char* cMathML = env->GetStringUTFChars(jMathML, NULL);
 		//std::string mathML(cMathML);
 		//displayTree = SCGRenderer::getDisplayTree(mathML, device);
+
+		LOG("exprTree%d", exprTree);
+
 		displayTree = SCGRenderer::getDisplayTree((scg::ExpressionTree*)exprTree, device);
 		//LOG("%s", mathML.c_str());
 		if (displayTree == NULL)

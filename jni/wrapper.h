@@ -3,6 +3,7 @@
 
 #include <android/log.h>
 #include <string>
+#include <jni.h>
 
 
 #define LOG(...) ((void)__android_log_print(ANDROID_LOG_DEBUG, "pan", __VA_ARGS__))
@@ -10,6 +11,7 @@
 namespace android {
 	std::wstring str2wstr(const std::string &str);
 	std::string wstr2str(const std::wstring &wstr);
+	jstring wchar2jstring(JNIEnv* env, const wchar_t* w);
 }
 
 

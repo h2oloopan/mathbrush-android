@@ -31,9 +31,7 @@ public class FormulaView extends View {
         	paint.setStrokeCap(Paint.Cap.ROUND);
         	paint.setStrokeWidth(1);
 			device = new ADevice(this, canvas, paint);
-
 			renderer.init(device, 60);
-			device.drawText("TEST", 50, 50);
 		}			
 	}
 

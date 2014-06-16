@@ -227,11 +227,7 @@ namespace SCGRenderer
 
     SCGRECT CDevice::getStringBox(wchar_t * _txt)
     {
-    	std::wstring wStr = std::wstring(_txt);
-    	std::string str(wStr.begin(), wStr.end());
-    	LOG("INSIDE: %s", _txt);
-    	LOG("OUTSIDE: %s", str.c_str());
-    	jstring jstr = env->NewStringUTF(str.c_str());
+    	jstring jstr = android::wchar2jstring(env, _txt);
     	jclass ADevice = env->GetObjectClass(device);
     	jmethodID jmi = env->GetMethodID(ADevice, "getStringBox", "(Ljava/lang/String;)[I");
     	jintArray result = (jintArray)(env->CallObjectMethod(device, jmi, jstr));
@@ -308,16 +304,30 @@ namespace SCGRenderer
 		env->CallVoidMethod(device, jmi, (jint)A, (jint)R, (jint)G, (jint)B);
     }
 
-    void CDevice::drawText(wchar_t* _txt, float _x, float _y)
+    void CDevice::drawText(std::string _txt, float _x, float _y)
     {
-    	std::string str = android::wstr2str(_txt);
-    	jstring jstr = env->NewStringUTF(str.c_str());
-    	jfloat x = (jfloat)x;
-    	jfloat y = (jfloat)y;
+    	jfloat x = (jfloat)_x;
+    	jfloat y = (jfloat)_y;
+    	//send wchar_t as byte array
+    	jstring txt = env->NewStringUTF(_txt.c_str());
+
 
     	jclass ADevice = env->GetObjectClass(device);
     	jmethodID jmi = env->GetMethodID(ADevice, "drawText", "(Ljava/lang/String;FF)V");
-    	env->CallVoidMethod(device, jmi, jstr, x, y);
+    	env->CallVoidMethod(device, jmi, txt, x, y);	
+    }
+
+    void CDevice::drawText(wchar_t* _txt, float _x, float _y)
+    {
+    	jfloat x = (jfloat)_x;
+    	jfloat y = (jfloat)_y;
+    	//send wchar_t as byte array
+    	jstring txt = android::wchar2jstring(env, _txt);
+
+
+    	jclass ADevice = env->GetObjectClass(device);
+    	jmethodID jmi = env->GetMethodID(ADevice, "drawText", "(Ljava/lang/String;FF)V");
+    	env->CallVoidMethod(device, jmi, txt, x, y);
     }
 
     void CDevice::drawArc(float _x1, float _y1, float _x2, float _y2, SCGRECT _rect)

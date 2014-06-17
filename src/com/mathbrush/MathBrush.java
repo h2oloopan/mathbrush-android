@@ -57,7 +57,7 @@ public class MathBrush extends Activity {
 			case R.id.action_discard:
 				recognizer.reset();
 				canvasView.clean();
-				//formulaView.clean(); 
+				formulaView.clean(); 
 			default:
 				return super.onOptionsItemSelected(item);
 		}

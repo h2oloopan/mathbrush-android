@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"New",
+				"NewStringUTF"
+			],
+			[
+				"nPro",
+				"nProfileName"
+			],
+			[
 				"dis",
 				"displayTree"
 			],
@@ -92,10 +100,6 @@
 				"getAbsolutePath"
 			],
 			[
-				"nPro",
-				"nProfileName"
-			],
-			[
 				"pro",
 				"profileName"
 			],
@@ -120,18 +124,10 @@
 	"buffers":
 	[
 		{
-			"file": "jni/recognition-wrapper.cpp",
+			"file": "res/layout/main.xml",
 			"settings":
 			{
-				"buffer_size": 4582,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/com/mathbrush/tools/Recognizer.java",
-			"settings":
-			{
-				"buffer_size": 586,
+				"buffer_size": 664,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,39 +135,7 @@
 			"file": "src/com/mathbrush/MathBrush.java",
 			"settings":
 			{
-				"buffer_size": 1687,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/com/mathbrush/tasks/RecTask.java",
-			"settings":
-			{
-				"buffer_size": 1313,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/com/mathbrush/views/FormulaView.java",
-			"settings":
-			{
-				"buffer_size": 1117,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/com/mathbrush/tools/Renderer.java",
-			"settings":
-			{
-				"buffer_size": 370,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "jni/rendering-wrapper.cpp",
-			"settings":
-			{
-				"buffer_size": 1687,
+				"buffer_size": 1685,
 				"line_ending": "Unix"
 			}
 		}
@@ -200,22 +164,34 @@
 	},
 	"file_history":
 	[
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Renderer.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/rendering-wrapper.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/ADevice.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/FormulaView.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/rendering-wrapper.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/CDevice.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/Symbol.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Functs.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/CDevice.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/BuildTreeFromExpr.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Renderer.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/ADevice.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/Functs.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/main.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/BuildTreeFromMathML.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.cc",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/strutils.cc",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Symbol.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/Symbol.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/dictionaries.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/SymbolBox.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/LoadTask.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/recog.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/MathBrush.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/strutils.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/MathRecognizer.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/recog.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/mathrecognizer-private.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/symbol-bag.cc",
+		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecTask.java",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Functs.h",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/BuildTreeFromMathML.cpp",
+		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Symbol.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/hashTable.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/libxml2.mk",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer.mk",
@@ -223,15 +199,11 @@
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/libiconv.mk",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/Android.mk",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/Makefile",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/CDevice.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/CanvasView.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecTask.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Recognizer.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/device-wrapper.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/strutils.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/Android.mk",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Device.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/wrapper.h",
 		"/Users/shengyingpan/Projects/MathJax/index.html",
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/MathJax/config/TeX-AMS-MML_SVG.js",
 		"/Users/shengyingpan/Projects/mathbrush-android/res/menu/actions.xml",
@@ -241,25 +213,20 @@
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/MathJax/MathJax.js",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/WebView.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/include/Types.h",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/renderer/src/BuildTreeFromExpr.cpp",
-		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/LoadTask.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask.java__",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/views/LoadView.java",
 		"/Users/shengyingpan/Projects/mathbrush-android/res/layout/loader.xml",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/RecognitionTask",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tasks/LoadItem.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/recog.cc",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/stroke.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/res/values/strings.xml",
 		"/Users/shengyingpan/Projects/mathbrush-android/assets/mathbrush/.profile",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/MathRecognizer.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/matrix-parser.cc",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/mathrecognizer-private.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/MathRecoTypes.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/MathRecognizer.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/tools/Debugger.java",
-		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/include/recog.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/mathreco/libmathreco/ink-io.cpp",
 		"/Users/shengyingpan/Projects/mathbrush-android/jni/recognition-wrapper.h",
 		"/Users/shengyingpan/Projects/mathbrush-android/src/com/mathbrush/wrappers/RecognitionWrapper.java",
@@ -298,6 +265,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"ADevice",
+			"device",
+			"_setExprTree",
+			"getDisp",
+			"getDisplayTree",
+			"recognizer_initialize",
 			"txt",
 			"getDisplayTree",
 			"CSymbolBasic::Calc",
@@ -363,6 +336,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"View",
+			"view",
 			"\"",
 			"GetMethodID",
 			""
@@ -370,29 +345,29 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "jni/recognition-wrapper.cpp",
+					"file": "res/layout/main.xml",
 					"settings":
 					{
-						"buffer_size": 4582,
+						"buffer_size": 664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3002,
-								3002
+								638,
+								638
 							]
 						],
 						"settings":
@@ -420,6 +395,10 @@
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -441,100 +420,30 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1622.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/com/mathbrush/tools/Recognizer.java",
-					"settings":
-					{
-						"buffer_size": 586,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								438,
-								438
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/com/mathbrush/MathBrush.java",
 					"settings":
 					{
-						"buffer_size": 1687,
+						"buffer_size": 1685,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								824,
-								824
+								1597,
+								1597
 							]
 						],
 						"settings":
@@ -562,6 +471,10 @@
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -587,290 +500,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/com/mathbrush/tasks/RecTask.java",
-					"settings":
-					{
-						"buffer_size": 1313,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/com/mathbrush/views/FormulaView.java",
-					"settings":
-					{
-						"buffer_size": 1117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1111,
-								1111
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/com/mathbrush/tools/Renderer.java",
-					"settings":
-					{
-						"buffer_size": 370,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								368,
-								368
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "jni/rendering-wrapper.cpp",
-					"settings":
-					{
-						"buffer_size": 1687,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1429,
-								1429
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6.0,
+						"translation.y": 125.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

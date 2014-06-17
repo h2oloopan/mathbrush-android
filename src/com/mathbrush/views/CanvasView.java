@@ -41,6 +41,7 @@ public class CanvasView extends View {
 
     public void clean() {
         //clean up the canvas
+        mCanvas.drawColor(0xFFAAAAAA);
         invalidate();
     }
 
@@ -55,7 +56,6 @@ public class CanvasView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(0xFFAAAAAA);
         canvas.drawBitmap(mBitmap, 0, 0, mPaint);
         canvas.drawPath(mPath, mPaint);
     }

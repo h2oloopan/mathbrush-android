@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    >
     <com.mathbrush.views.CanvasView 
     	android:id="@+id/canvas_view"
     	android:layout_width="fill_parent"
     	android:layout_height="fill_parent"
-    	android:layout_weight="3"
     	/>
 
     <com.mathbrush.views.FormulaView
     	android:id="@+id/formula_view"
-    	android:layout_width="fill_parent"
-    	android:layout_height="fill_parent"
-    	android:layout_weight="7"
+    	android:layout_width="400dp"
+    	android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="top|right"
     	/>
 
-</LinearLayout>
+</FrameLayout>

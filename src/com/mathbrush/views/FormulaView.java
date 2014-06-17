@@ -36,6 +36,7 @@ public class FormulaView extends View {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
+		canvas.drawColor(0xFFFFFFFF);
 		canvas.drawBitmap(bitmap, 0, 0, paint);
 	}
 
@@ -61,6 +62,7 @@ public class FormulaView extends View {
 	*/
 
 	public void display(long exprTree) {
+		clean();
 		renderer.display(exprTree, 50, 50);
 	}
 

@@ -241,7 +241,6 @@ namespace SCGRenderer
 
     void CDevice::setTextColor(TEXT_COLOR _color)
     {
-    	return;
     	int A = 255;
     	int R, G, B;
     	if (_color == SELECTEDTEXTCOLOR)
@@ -264,7 +263,6 @@ namespace SCGRenderer
 
     void CDevice::setPenColor(PEN_COLOR _color)
     {
-    	return;
     	int A = 255;
 		int R, G, B;
     	if (_color == SELECTEDTEXTCOLOR)
@@ -287,7 +285,6 @@ namespace SCGRenderer
 
     void CDevice::setBackColor(BACK_COLOR _color)
     {
-    	return;
     	int A = 255;
     	int R, G, B;
     	if (_color == HIGHLIGHTBACKCOLOR)

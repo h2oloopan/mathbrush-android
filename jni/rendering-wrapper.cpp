@@ -13,7 +13,7 @@ extern "C" {
 	static std::string mathML;
 	static bool inkChanged;
 
-	JNIEXPORT void JNICALL Java_com_mathbrush_tools_Renderer_init(JNIEnv* env, jobject obj, jobject aDevice, jint fontSize)
+	JNIEXPORT void JNICALL Java_com_mathbrush_tools_Renderer_init(JNIEnv* env, jobject obj, jobject view, jint fontSize)
 	{
 		exprTree = NULL;
 		inkChanged = false;
@@ -22,10 +22,11 @@ extern "C" {
 		mathML = "";
 
 		//create a global reference
-		jobject aDeviceGlobal = reinterpret_cast<jobject>(env->NewGlobalRef(aDevice));
-		device = new SCGRenderer::CDevice(env, aDeviceGlobal);
+		jobject viewGlobal = reinterpret_cast<jobject>(env->NewGlobalRef(view));
+		device = new SCGRenderer::CDevice(env, viewGlobal);
 		device->createFont("times", (int)fontSize);
 		
+		LOG("%d", (long)device);
 		//device->drawText("test", 50, 50);
 		SCGRenderer::loadDictionaries();
 	}
@@ -54,7 +55,8 @@ extern "C" {
 			return false;
 		}
 			
-
+		LOG("%d", (long)device);
+		
 		displayTree->moveTo((int)x, (int)y);
 		displayTree->display(device, false);
 

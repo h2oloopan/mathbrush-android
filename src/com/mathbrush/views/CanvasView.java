@@ -41,7 +41,6 @@ public class CanvasView extends View {
 
     public void clean() {
         //clean up the canvas
-        this.onDraw(mCanvas);
         invalidate();
     }
 

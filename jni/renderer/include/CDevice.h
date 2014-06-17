@@ -73,9 +73,9 @@ namespace SCGRenderer
 	{
 	private:
 		JNIEnv* env;
-		jobject device; //this device is a java ADevice
+		jobject view; //this device is a java ADevice
 	public:
-		CDevice(JNIEnv* _env, jobject _device);
+		CDevice(JNIEnv* _env, jobject _view);
 		~CDevice();
 		void createFont(std::string _name, float _size);
 		SCGRECT getStringBox(wchar_t * _txt);

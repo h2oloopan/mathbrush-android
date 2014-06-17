@@ -1,6 +1,6 @@
 package com.mathbrush.tools;
 
-import com.mathbrush.tools.ADevice;
+import com.mathbrush.views.FormulaView;
 import com.mathbrush.tools.Debugger;
 
 public class Renderer {
@@ -9,7 +9,7 @@ public class Renderer {
 		System.loadLibrary("wrappers");
 	}
 
-	public native void init(ADevice device, int fontSize);
+	public native void init(FormulaView view, int fontSize);
 	//public native boolean display(String mathML, int x, int y);
 	public native boolean display(long exprTree, int x, int y);
 }

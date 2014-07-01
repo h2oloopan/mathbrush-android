@@ -1,4 +1,5 @@
 #include "Symbol.h"
+#include "wrapper.h"
 
 namespace SCGRenderer
 {
@@ -394,6 +395,7 @@ namespace SCGRenderer
 	//--------------------------------------------
 	CSymbolBox* CSymbolBasic::createBox(int _left, int _center, CDevice * _device )
 	{
+		LOG("CSymbolBasic::createBox %d %d", _left, _center);
 		CSymbol::createBox(_left,_center,_device);
 
 		CSymbolBox *x;
@@ -2033,6 +2035,7 @@ namespace SCGRenderer
 	//--------------------------------------------
 	CSymbolBox* CSymbolFence::createBox(int _left, int _center, CDevice * _device)
 	{
+		LOG("CSymbolFence::createBox %d %d", _left, _center);
 		CSymbol::createBox(_left,_center,_device);
 
 		CSymbolBox *x, *b1, *b2;
@@ -2062,6 +2065,7 @@ namespace SCGRenderer
 		x->bottom = lowestBottom;
 	
 		// stretch the brackets
+		LOG("CSymbolFence:createBox 2068: %d %d", x->getHeight(), SYMBOLHI);
 		int ratio = x->getHeight() / SYMBOLHI; // the ratio of vertical stretch
 		openFence->stretchBox(x->top,x->bottom,openFence->getLeft(),openFence->getRight()+ratio);
 		closeFence->stretchBox(x->top,x->bottom,closeFence->getLeft(),closeFence->getRight()+ratio);

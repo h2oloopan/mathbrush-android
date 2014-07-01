@@ -88,6 +88,10 @@ namespace SCGRenderer
 		void fillRect(SCGRECT _rect);
 		void drawLine(float _x1, float _y1, float _x2, float _y2);
 		void drawLineTo(float _x1, float _y1);
+		bool updateFontSize(float _size);
+
+		float getFontHeight();
+
 		SCGRECT getUnicodeExactBox(scg::unicode_char _ch){return getStringBox((wchar_t*) _ch);};
 	};
 

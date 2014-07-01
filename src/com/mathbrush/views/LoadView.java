@@ -10,7 +10,6 @@ import android.graphics.*;
 
 import com.mathbrush.MathBrush;
 import com.mathbrush.tools.*;
-import com.mathbrush.R;
 
 public class LoadView extends TextView {
 	private Recognizer recognizer;

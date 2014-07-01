@@ -1,5 +1,5 @@
 #include <string.h>
-#include <Math.h>
+#include <math.h>
 #include "Functs.h"
 
 namespace SCGRenderer

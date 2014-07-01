@@ -11,6 +11,7 @@
 namespace android {
 	std::wstring str2wstr(const std::string &str);
 	std::string wstr2str(const std::wstring &wstr);
+	char* wchar2char(const wchar_t* w);
 	jstring wchar2jstring(JNIEnv* env, const wchar_t* w);
 }
 

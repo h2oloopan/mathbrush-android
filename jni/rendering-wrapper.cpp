@@ -26,8 +26,6 @@ extern "C" {
 		device = new SCGRenderer::CDevice(env, viewGlobal);
 		device->createFont("times", (int)fontSize);
 		
-		LOG("%d", (long)device);
-		//device->drawText("test", 50, 50);
 		SCGRenderer::loadDictionaries();
 	}
 
@@ -55,7 +53,7 @@ extern "C" {
 			return false;
 		}
 			
-		LOG("%d", (long)device);
+		LOG("DISPLAY DEVICE*: %d", (long)device);
 		
 		displayTree->moveTo((int)x, (int)y);
 		displayTree->display(device, false);

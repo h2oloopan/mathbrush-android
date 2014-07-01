@@ -11,10 +11,14 @@ namespace android {
 		result.assign(wstr.begin(), wstr.end());
 		return result;
 	}
+	char* wchar2char(const wchar_t* w) {
+		return NULL;
+	}
 	jstring wchar2jstring(JNIEnv* env, const wchar_t* w) {
-		LOG("CONVERTING %s", w);
 		size_t len = wcslen(w);
+		LOG("CONVERTING SIZE %d", len);
 		jchar* str = (jchar*)malloc((len+1)*sizeof(jchar));
+		//char* str = (char*)malloc((len+1)*sizeof(char));
 		int i;
 		for (i = 0; i < len; i++) {
 			str[i] = w[i];
@@ -22,6 +26,7 @@ namespace android {
 		}
 		str[len] = 0;
 		jstring js = env->NewString(str, len);
+		//jstring js = env->NewStringUTF(str);
 		free(str);
 		return js;
 	}

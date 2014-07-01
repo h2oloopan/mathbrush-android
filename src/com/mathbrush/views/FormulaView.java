@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.graphics.*;
 import android.view.*;
 
-import com.mathbrush.tools.ADevice;
 import com.mathbrush.tools.Renderer;
 import com.mathbrush.tools.Debugger;
 
@@ -14,8 +13,6 @@ public class FormulaView extends View {
 	private Paint paint;
 	private Canvas canvas;
 	private Bitmap bitmap;
-
-	private ADevice device;
 	private Renderer renderer;
 
 	public FormulaView(Context c, AttributeSet attrs) {
@@ -36,7 +33,7 @@ public class FormulaView extends View {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-		canvas.drawColor(0xFFFFFFFF);
+		//canvas.drawColor(0xFFFFFFFF);
 		canvas.drawBitmap(bitmap, 0, 0, paint);
 	}
 
@@ -46,8 +43,19 @@ public class FormulaView extends View {
         if (canvas == null) {
         	bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         	canvas = new Canvas(bitmap);
+        	canvas.drawColor(0xFFFFFFFF);
+        	invalidate();
         }
     }
+
+    //helper
+    private void printBytes(byte[] buf) {
+    	Debugger.log("ADevice-printBytes: " + buf.length);
+    	for (int i = 0; i < buf.length; i++) {
+    		Debugger.log(String.format("%x", buf[i]));
+    	}
+    }
+
 
     public void clean() {
     	canvas.drawColor(0xFFFFFFFF);
@@ -63,6 +71,7 @@ public class FormulaView extends View {
 
 	public void display(long exprTree) {
 		clean();
+		//drawText("(", 50, 50);
 		renderer.display(exprTree, 50, 50);
 	}
 
@@ -71,6 +80,13 @@ public class FormulaView extends View {
 		Typeface tf = Typeface.create(name, Typeface.NORMAL);
 		paint.setTypeface(tf);
 		paint.setTextSize(size);
+	}
+
+	public float getFontHeight() {
+		Debugger.log("ADevice-getFontHeight: ");
+		Paint.FontMetrics fm = paint.getFontMetrics();
+		Debugger.log("ADevice-getFontHeight-return: " + fm.ascent + " " + fm.descent);
+		return fm.descent - fm.ascent;
 	}
 
 	public int[] getStringBox(String txt) {
@@ -86,22 +102,31 @@ public class FormulaView extends View {
 
 	public void setTextColor(int a, int r, int g, int b) {
 		Debugger.log("ADevice-setTextColor: " + a + " " + r + " " + g + " " + b);
-		paint.setARGB(a, r, g, b);
+		//paint.setARGB(a, r, g, b);
 	}
 
 	public void setPenColor(int a, int r, int g, int b) {
 		Debugger.log("ADevice-setPenColor: " + a + " " + r + " " + g + " " + b);
-		paint.setARGB(a, r, g, b);
+		//paint.setARGB(a, r, g, b);
 	}
 
 	public void setBackColor(int a, int r, int g, int b) {
 		Debugger.log("ADevice-setBackColor: " + a + " " + r + " " + g + " " + b);
-		canvas.drawARGB(a, r, g, b);
-		invalidate();
+		//canvas.drawARGB(a, r, g, b);
+		//invalidate();
 	}
 
 	public void drawText(String txt, float x, float y) {
+		if (txt == "1") {
+			Debugger.log("ADevice-drawText: EQUAL!!!");
+		}
+		else {
+
+		}
+
 		Debugger.log("ADevice-drawText: " + txt + " " + x + " " + y);
+		byte[] buf = txt.getBytes();
+		printBytes(buf);
 		canvas.drawText(txt, x, y, paint);
 		invalidate();
 	}

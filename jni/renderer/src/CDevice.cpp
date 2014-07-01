@@ -206,6 +206,9 @@ namespace SCGRenderer
 
 //#############################################################################################################
 #ifdef __ANDROID__
+
+    void updateFontHeight(int _fontHeight);  // implemented in fictionaries.cpp
+
     CDevice::CDevice(JNIEnv* _env, jobject _view)
     {
     	env = _env;
@@ -223,6 +226,22 @@ namespace SCGRenderer
     	jclass View = env->GetObjectClass(view);
     	jmethodID jmi = env->GetMethodID(View, "createFont", "(Ljava/lang/String;F)V");
     	env->CallVoidMethod(view, jmi, name, size);
+
+    	updateFontHeight(getFontHeight());
+    }
+
+    bool CDevice::updateFontSize(float _size) 
+    {
+    	createFont("times", _size);
+    	return true;
+    }
+
+    float CDevice::getFontHeight() 
+    {
+    	jclass View = env->GetObjectClass(view);
+    	jmethodID jmi = env->GetMethodID(View, "getFontHeight", "()F");
+    	float height = (float)(env->CallFloatMethod(view, jmi));
+    	return height;
     }
 
     SCGRECT CDevice::getStringBox(wchar_t * _txt)
@@ -322,6 +341,7 @@ namespace SCGRenderer
     	jfloat x = (jfloat)_x;
     	jfloat y = (jfloat)_y;
     	//send wchar_t as byte array
+    	
     	jstring txt = android::wchar2jstring(env, _txt);
 
 

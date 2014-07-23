@@ -12,7 +12,17 @@ namespace android {
 		return result;
 	}
 	char* wchar2char(const wchar_t* w) {
-		return NULL;
+		size_t len = wcslen(w);
+		LOG("CONVERTING SIZE %d", len);
+		char* str = (char*)malloc((len+1)*sizeof(char));
+		int i;
+		for (i = 0; i < len; i++) {
+			str[i] = w[i];
+			LOG("%x", str[i]);
+		}
+		str[len] = 0;
+		return str;
+		//TODO: may need to free memory
 	}
 	jstring wchar2jstring(JNIEnv* env, const wchar_t* w) {
 		size_t len = wcslen(w);

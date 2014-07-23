@@ -278,8 +278,13 @@ namespace SCGRenderer
 		type = _type;
 		noOfChildren = 0;
 
+		LOG("SYMBOL: %s", ansiText);
+		LOG("%d", type);
+
 		if (type == SCGRenderer::OPERATOR)
 		{
+			delete[] ansiText;
+			ansiText = android::wchar2char(_txt);
 			// get the information from the operator dictionary the txt contains the character that will be displayed
 			// the originalTxt contains the original text in the mathML
 			OperatorDictData data;
@@ -307,7 +312,7 @@ namespace SCGRenderer
 				wcscpy(txt,_txt); 
 			}
 			originalTxt = new char [size+1];
-			strcpy(originalTxt,ansiText);			
+			strcpy(originalTxt,ansiText);		
 		}
 		else if (type == SCGRenderer::EXTERNAL_IDENTIFIER) // comes from the MathML
 		{

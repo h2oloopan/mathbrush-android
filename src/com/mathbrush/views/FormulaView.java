@@ -13,18 +13,25 @@ public class FormulaView extends View {
 	private Paint paint;
 	private Canvas canvas;
 	private Bitmap bitmap;
+	private Path path;
 	private Renderer renderer;
+
+	private int PATH_WIDTH = 5;
+	private int REGULAR_WIDTH = 1;
 
 	public FormulaView(Context c, AttributeSet attrs) {
 		super(c, attrs);
 
 		paint = new Paint();
+		paint.setColor(Color.BLACK);
 		paint.setAntiAlias(true);
 		paint.setDither(true);
 		paint.setStyle(Paint.Style.FILL);
     	paint.setStrokeJoin(Paint.Join.ROUND);
     	paint.setStrokeCap(Paint.Cap.ROUND);
-    	paint.setStrokeWidth(1);
+    	paint.setStrokeWidth(REGULAR_WIDTH);
+
+    	path = new Path();
 
 		//initialization
 		renderer = new Renderer();
@@ -33,7 +40,6 @@ public class FormulaView extends View {
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-		//canvas.drawColor(0xFFFFFFFF);
 		canvas.drawBitmap(bitmap, 0, 0, paint);
 	}
 
@@ -43,8 +49,7 @@ public class FormulaView extends View {
         if (canvas == null) {
         	bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         	canvas = new Canvas(bitmap);
-        	canvas.drawColor(0xFFFFFFFF);
-        	invalidate();
+        	clean();
         }
     }
 
@@ -71,7 +76,6 @@ public class FormulaView extends View {
 
 	public void display(long exprTree) {
 		clean();
-		//drawText("(", 50, 50);
 		renderer.display(exprTree, 50, 50);
 	}
 
@@ -83,9 +87,9 @@ public class FormulaView extends View {
 	}
 
 	public float getFontHeight() {
-		Debugger.log("ADevice-getFontHeight: ");
+		//Debugger.log("ADevice-getFontHeight: ");
 		Paint.FontMetrics fm = paint.getFontMetrics();
-		Debugger.log("ADevice-getFontHeight-return: " + fm.ascent + " " + fm.descent);
+		//Debugger.log("ADevice-getFontHeight-return: " + fm.ascent + " " + fm.descent);
 		return fm.descent - fm.ascent;
 	}
 
@@ -117,16 +121,9 @@ public class FormulaView extends View {
 	}
 
 	public void drawText(String txt, float x, float y) {
-		if (txt == "1") {
-			Debugger.log("ADevice-drawText: EQUAL!!!");
-		}
-		else {
-
-		}
-
 		Debugger.log("ADevice-drawText: " + txt + " " + x + " " + y);
-		byte[] buf = txt.getBytes();
-		printBytes(buf);
+		//byte[] buf = txt.getBytes();
+		//printBytes(buf);
 		canvas.drawText(txt, x, y, paint);
 		invalidate();
 	}
@@ -134,10 +131,14 @@ public class FormulaView extends View {
 	public void drawArc(float x1, float y1, float x2, float y2, float left, float top, float right, float bottom) {
 		Debugger.log("ADevice-drawArc: " + x1 + " " + y1 + " " + x2 + " " + y2 + " " + left + " " + top + " " + right + " " + bottom);
 		RectF bounds = new RectF(left, top, right, bottom);
-		Path path = new Path();
+		path.reset();
 		path.moveTo(x1, y1);
 		path.arcTo(bounds, 60, 60); //TODO: of course this is wrong
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(PATH_WIDTH);
 		canvas.drawPath(path, paint);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setStrokeWidth(REGULAR_WIDTH);
 		invalidate();
 	}
 
@@ -150,18 +151,26 @@ public class FormulaView extends View {
 
 	public void drawLine(float x1, float y1, float x2, float y2) {
 		Debugger.log("ADevice-drawLine: " + x1 + " " + y1 + " " + x2 + " " + y2);
-		Path path = new Path();
+		path.reset();
 		path.moveTo(x1, y1);
 		path.lineTo(x2, y2);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(PATH_WIDTH);
 		canvas.drawPath(path, paint);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setStrokeWidth(REGULAR_WIDTH);
 		invalidate();
 	}
 
 	public void drawLineTo(float x, float y) {
 		Debugger.log("ADevice-drawLineTo: " + x + " " + y);
-		Path path = new Path();
+		path.reset();
 		path.lineTo(x, y);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(PATH_WIDTH);
 		canvas.drawPath(path, paint);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setStrokeWidth(REGULAR_WIDTH);
 		invalidate();
 	}
 }

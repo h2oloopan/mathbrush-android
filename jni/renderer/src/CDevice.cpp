@@ -213,6 +213,7 @@ namespace SCGRenderer
     {
     	env = _env;
     	view = _view;
+    	minWidth = 10;
     }
     CDevice::~CDevice()
     {
@@ -255,6 +256,14 @@ namespace SCGRenderer
     	int width = (int)(elements[0]);
     	int height = (int)(elements[1]);
     	env->ReleaseIntArrayElements(result, elements, 0);
+
+    	//This is just what we did with iOS
+    	if (width != 0 && width < minWidth) {
+    		width = minWidth;
+    	}
+    	height = getFontHeight();
+
+
     	return SCGRECT(0, 0, width, height);
     }
 
@@ -333,7 +342,13 @@ namespace SCGRenderer
 
     	jclass View = env->GetObjectClass(view);
     	jmethodID jmi = env->GetMethodID(View, "drawText", "(Ljava/lang/String;FF)V");
-    	env->CallVoidMethod(view, jmi, txt, x, y);	
+
+
+    	jmethodID getAscent = env->GetMethodID(View, "getAscent", "()F");
+    	float ascent = (float)(env->CallFloatMethod(view, getAscent));
+
+
+    	env->CallVoidMethod(view, jmi, txt, x, y + ascent);	
     }
 
     void CDevice::drawText(wchar_t* _txt, float _x, float _y)

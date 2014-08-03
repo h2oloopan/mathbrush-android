@@ -74,6 +74,7 @@ namespace SCGRenderer
 	private:
 		JNIEnv* env;
 		jobject view; //this device is a java ADevice
+		int minWidth;
 	public:
 		CDevice(JNIEnv* _env, jobject _view);
 		~CDevice();

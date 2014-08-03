@@ -283,8 +283,10 @@ namespace SCGRenderer
 
 		if (type == SCGRenderer::OPERATOR)
 		{
+#ifdef __ANDROID__
 			delete[] ansiText;
 			ansiText = android::wchar2char(_txt);
+#endif
 			// get the information from the operator dictionary the txt contains the character that will be displayed
 			// the originalTxt contains the original text in the mathML
 			OperatorDictData data;
@@ -3319,6 +3321,10 @@ namespace SCGRenderer
 		elem->display(_device,_showBoxes);
 		if (!broken)
 		{
+
+			LOG("DISPLAY SQRT");
+			LOG("MB TOP RIGHT BOTTOM LEFT: %d %d %d %d", mybox->top, mybox->right, mybox->bottom, mybox->left);
+
 			setPenColor(_device);
 			_device->drawLine(mybox->left+lspace,(mybox->top+mybox->bottom)/2,(mybox->left+lspace+elem->getLeft())/2,mybox->bottom); // the \ line
 			_device->drawLine((mybox->left+lspace+elem->getLeft())/2,mybox->bottom,elem->getLeft(),elem->getTop() - 2); // the | line

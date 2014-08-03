@@ -76,7 +76,7 @@ public class FormulaView extends View {
 
 	public void display(long exprTree) {
 		clean();
-		renderer.display(exprTree, 50, 50);
+		renderer.display(exprTree, 0, 40);
 	}
 
 	public void createFont(String name, float size) {
@@ -91,6 +91,18 @@ public class FormulaView extends View {
 		Paint.FontMetrics fm = paint.getFontMetrics();
 		//Debugger.log("ADevice-getFontHeight-return: " + fm.ascent + " " + fm.descent);
 		return fm.descent - fm.ascent;
+	}
+
+	public float getDescent() {
+		Paint.FontMetrics fm = paint.getFontMetrics();
+		Debugger.log("ADevice-getDescent: " + fm.descent);
+		return fm.descent;
+	}
+
+	public float getAscent() {
+		Paint.FontMetrics fm = paint.getFontMetrics();
+		Debugger.log("Adevice-getAscent: " + fm.ascent);
+		return fm.ascent;
 	}
 
 	public int[] getStringBox(String txt) {

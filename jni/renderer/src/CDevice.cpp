@@ -346,9 +346,11 @@ namespace SCGRenderer
 
     	jmethodID getAscent = env->GetMethodID(View, "getAscent", "()F");
     	float ascent = (float)(env->CallFloatMethod(view, getAscent));
+    	jmethodID getDescent = env->GetMethodID(View, "getDescent", "()F");
+    	float descent = (float)(env->CallFloatMethod(view, getDescent));
 
 
-    	env->CallVoidMethod(view, jmi, txt, x, y + ascent);	
+    	env->CallVoidMethod(view, jmi, txt, x, y - ascent - descent);
     }
 
     void CDevice::drawText(wchar_t* _txt, float _x, float _y)
@@ -362,7 +364,16 @@ namespace SCGRenderer
 
     	jclass View = env->GetObjectClass(view);
     	jmethodID jmi = env->GetMethodID(View, "drawText", "(Ljava/lang/String;FF)V");
-    	env->CallVoidMethod(view, jmi, txt, x, y);
+
+
+
+    	jmethodID getAscent = env->GetMethodID(View, "getAscent", "()F");
+    	float ascent = (float)(env->CallFloatMethod(view, getAscent));
+    	jmethodID getDescent = env->GetMethodID(View, "getDescent", "()F");
+    	float descent = (float)(env->CallFloatMethod(view, getDescent));
+
+
+    	env->CallVoidMethod(view, jmi, txt, x, y - ascent - descent);
     }
 
     void CDevice::drawArc(float _x1, float _y1, float _x2, float _y2, SCGRECT _rect)

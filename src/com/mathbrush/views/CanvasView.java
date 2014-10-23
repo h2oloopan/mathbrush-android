@@ -51,6 +51,7 @@ public class CanvasView extends View {
         if (mCanvas == null) {
         	mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
             mCanvas = new Canvas(mBitmap);
+            clean();
         }
     }
 

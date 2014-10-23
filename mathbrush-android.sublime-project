@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/Users/shengyingpan/Projects/mathbrush-android"
+			"follow_symlinks": true,
+			"path": "."
 		}
 	]
 }

@@ -17,6 +17,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:layout_gravity="top|right"
+        android:padding="20dp"
     	/>
 
 </FrameLayout>

@@ -8,16 +8,5 @@
     	android:id="@+id/canvas_view"
     	android:layout_width="fill_parent"
     	android:layout_height="fill_parent"
-    	/>
-
-    <com.mathbrush.views.FormulaView
-    	android:id="@+id/formula_view"
-    	android:layout_width="400dp"
-    	android:layout_height="200dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_gravity="top|right"
-        android:padding="20dp"
-    	/>
-
+    />
 </FrameLayout>

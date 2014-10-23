@@ -17,7 +17,8 @@ public class CanvasView extends View {
     private Bitmap  mBitmap;  
     private Path    mPath;
     private Paint   mPaint;
-    private ArrayList<Point> mPoints;
+    private ArrayList<Point> stroke;
+    private ArrayList<ArrayList<Point>> strokes;
 
     private float mX, mY;
     private static final float TOUCH_TOLERANCE = 4;
@@ -70,8 +71,8 @@ public class CanvasView extends View {
 
         //store the point
         skip = 1;
-        mPoints = new ArrayList<Point>();
-        mPoints.add(new Point((int)Math.floor(x), (int)Math.floor(y)));
+        stroke = new ArrayList<Point>();
+        stroke.add(new Point((int)Math.floor(x), (int)Math.floor(y)));
     }
     private void touch_move(float x, float y) {
         float dx = Math.abs(x - mX);
@@ -83,7 +84,7 @@ public class CanvasView extends View {
 
             //store the point
             if (skip >= REC_SKIP) {
-                mPoints.add(new Point((int)Math.floor(x), (int)Math.floor(y)));
+                stroke.add(new Point((int)Math.floor(x), (int)Math.floor(y)));
                 skip = 0;
             }
             skip++;
@@ -97,8 +98,7 @@ public class CanvasView extends View {
         mPath.reset();
 
         //Add stroke to recognizer
-        RecTask task = new RecTask((MathBrush)this.getContext());
-        task.execute(mPoints);
+
     }
 
     @Override

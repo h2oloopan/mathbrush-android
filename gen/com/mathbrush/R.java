@@ -27,16 +27,12 @@ public final class R {
         public static final int load_screen=0x7f020003;
     }
     public static final class id {
-        public static final int action_discard=0x7f080005;
-        public static final int canvas_view=0x7f080003;
-        public static final int formula_view=0x7f080004;
-        public static final int load_view=0x7f080001;
-        public static final int loader_layout=0x7f080000;
-        public static final int main_layout=0x7f080002;
+        public static final int action_discard=0x7f080002;
+        public static final int canvas_view=0x7f080001;
+        public static final int main_layout=0x7f080000;
     }
     public static final class layout {
-        public static final int loader=0x7f030000;
-        public static final int main=0x7f030001;
+        public static final int main=0x7f030000;
     }
     public static final class menu {
         public static final int actions=0x7f070000;

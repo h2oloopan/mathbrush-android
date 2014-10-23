@@ -1,6 +1,6 @@
-/home/s5pan/Projects/mathbrush-android/bin/MathBrush-debug-unaligned.apk : \
-/home/s5pan/Projects/mathbrush-android/bin/MathBrush.ap_ \
-/home/s5pan/Projects/mathbrush-android/bin/classes.dex \
-/home/s5pan/Projects/mathbrush-android/libs/android-support-v4.jar \
-/home/s5pan/Projects/mathbrush-android/libs/armeabi/gdbserver \
-/home/s5pan/Projects/mathbrush-android/libs/armeabi/libwrappers.so \
+/Users/shengyingpan/Projects/mathbrush-android/bin/MathBrush-debug-unaligned.apk : \
+/Users/shengyingpan/Projects/mathbrush-android/bin/MathBrush.ap_ \
+/Users/shengyingpan/Projects/mathbrush-android/bin/classes.dex \
+/Users/shengyingpan/Projects/mathbrush-android/libs/android-support-v4.jar \
+/Users/shengyingpan/Projects/mathbrush-android/libs/armeabi/gdbserver \
+/Users/shengyingpan/Projects/mathbrush-android/libs/armeabi/libwrappers.so \

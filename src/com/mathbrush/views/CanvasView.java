@@ -37,7 +37,7 @@ public class CanvasView extends View {
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(12);
-        mPoints = new ArrayList<Point>();
+        strokes = new ArrayList<ArrayList<Point>>();
     }
 
     public void clean() {
